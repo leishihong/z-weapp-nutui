@@ -17,6 +17,7 @@ module.exports = {
         "camel2DashComponentName": false
       },
       'nutui-react-taro'
-    ]
+    ],
+    'lodash'
   ]
 }

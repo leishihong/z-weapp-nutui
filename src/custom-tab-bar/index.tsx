@@ -26,6 +26,7 @@ const CustomTabBar: FC = () => {
 
 	const onSwitchTab = useCallback(
 		(item, index: number) => {
+			Taro.vibrateShort({ type: 'medium' });
 			Taro.switchTab({
 				url: TAB[item.pageName],
 				success: () => {

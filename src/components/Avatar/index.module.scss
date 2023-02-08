@@ -1,0 +1,129 @@
+.avatar {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: PingFang SC, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  // z-index: 1;
+
+  image {
+    width: 100%;
+    height: 100%;
+    // background-color: #f7f8fa;
+  }
+  // .avatarImage {
+  //   background-color: #f7f8fa;
+  // }
+
+  &--circle {
+    border-radius: 50%;
+    image {
+      border-radius: 50%;
+    }
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+  &--rounded {
+    border-radius: 8px;
+    image {
+      border-radius: 8px;
+    }
+  }
+
+  &--mini {
+    width: 16px;
+    height: 16px;
+    font-size: 20px;
+
+    .avatar--rounded {
+      border-radius: 4px;
+      image {
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &--small {
+    width: 26px;
+    height: 26px;
+    font-size: 24px;
+
+    .avatar--rounded {
+      border-radius: 8px;
+      image {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &--medium {
+    width: 38px;
+    height: 38px;
+    font-size: 28px;
+
+    .avatar--rounded {
+      border-radius: 10px;
+      image {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &--large {
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+
+    .avatar--rounded {
+      border-radius: 12px;
+      image {
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+.avatar-group {
+  display: flex;
+  .avatar {
+    border: 1px solid #ffffff;
+  }
+
+  &--spacing-mini {
+    padding-left: 8px;
+
+    .avatar {
+      margin-left: calc(8px * -1);
+    }
+  }
+
+  &--spacing-small {
+    padding-left: 12px;
+
+    .avatar {
+      margin-left: calc(12px * -1);
+    }
+  }
+
+  &--spacing-medium {
+    padding-left: 16px;
+
+    .avatar {
+      margin-left: calc(16px * -1);
+    }
+  }
+
+  &--spacing-large {
+    padding-left: 24px;
+
+    .avatar {
+      margin-left: calc(24px * -1);
+    }
+  }
+}

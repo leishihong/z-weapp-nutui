@@ -48,6 +48,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@bem-react/classname": "^1.5.12",
     "@nutui/nutui-react-taro": "^1.4.5",
     "@tarojs/components": "3.6.0",
     "@tarojs/helper": "3.6.0",
@@ -69,10 +70,12 @@
     "dva-core": "^2.0.4",
     "dva-loading": "^3.0.22",
     "lodash": "^4.17.21",
+    "raf": "^3.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.5",
     "react-refresh": "^0.11.0",
+    "react-transition-group": "^4.4.5",
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2"
@@ -93,6 +96,7 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "babel-plugin-import": "^1.13.3",
+    "babel-plugin-lodash": "^3.3.4",
     "babel-preset-taro": "3.6.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.12.0",

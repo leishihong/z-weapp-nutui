@@ -9,6 +9,10 @@ export default defineAppConfig({
     'pages/index/index'
   ],
   tabBar: tabBarConfig,
+  networkTimeout: {
+    request: 20000,
+    downloadFile: 10000
+  },
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

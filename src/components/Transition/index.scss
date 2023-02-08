@@ -1,0 +1,170 @@
+// Animation
+$animation-duration-base: 0.3s;
+$animation-duration-fast: 0.2s;
+$animation-timing-function-enter: ease-out;
+$animation-timing-function-exit: ease-in;
+
+@keyframes slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes slide-up-exit {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slide-down-exit {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slide-left-exit {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slide-right-exit {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Fade Animation
+.transition-fade {
+  &-appear-active,
+  &-enter-active {
+    animation-name: fade-in;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: fade-out;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-exit;
+    animation-fill-mode: both;
+  }
+}
+
+// Slide Animation
+.transition-slide-up {
+  &-appear-active,
+  &-enter-active {
+    animation-name: slide-up-enter;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: slide-up-exit;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+}
+
+.transition-slide-down {
+  &-appear-active,
+  &-enter-active {
+    animation-name: slide-down-enter;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: slide-down-exit;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+}
+
+.transition-slide-left {
+  &-appear-active,
+  &-enter-active {
+    animation-name: slide-left-enter;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: slide-left-exit;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+}
+
+.transition-slide-right {
+  &-appear-active,
+  &-enter-active {
+    animation-name: slide-right-enter;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: slide-right-exit;
+    animation-duration: $animation-duration-base;
+    animation-timing-function: $animation-timing-function-enter;
+    animation-fill-mode: both;
+  }
+}

@@ -1,0 +1,265 @@
+$gray0: var(--u-gray-0, #000000);
+// 主要内容用色，常用语常规标题内容、细文浏览、常规按钮文字以及图表引导。
+$gray1: var(--u-gray-1, #1a1a1a);
+// 次要文字色，用于次级标题、属性标示、非主要信息引导等。
+$gray2: var(--u-gray-2, #757575);
+// 不可操作内容色，用于预置内容、无效内容、特殊不可点击按钮、组件边框线等。
+$gray3: var(--u-gray-3, #bfbfbf);
+// 页面基底色，用于卡片式页面的兜底，永远置于页面最底层。
+$gray4: var(--u-gray-4, #f4f4f4);
+// 卡片内嵌背景色，用于卡片内部的信息包裹，感知较弱。
+$gray5: var(--u-gray-5, #f8f8f8);
+// 卡片背景色
+$gray6: var(--u-gray-6, #ffffff);
+// 页面全局蒙层，用于弹出层、弹窗、新功能引导出现的整页遮罩
+$gray7: var(--u-gray-7, rgba(0, 0, 0, 0.7));
+// 局部蒙层，用于非整页遮罩
+$gray8: var(--u-gray-8, rgba(0, 0, 0, 0.4));
+// 间隔线/容错线，用于结构或信息分割
+$gray9: var(--u-gray-9, rgba(0, 0, 0, 0.08));
+// 图片容错蒙层
+$gray10: var(--u-gray-10, rgba(0, 0, 0, 0.02));
+
+$primary-color: var(--u-primary-color, red);
+$elevator-list-inner-bg-color: var(--u-elevator-list-inner-bg-color, $gray6);
+$elevator-list-item-highcolor: var(
+	--u-elevator-list-item-highcolor,
+	$primary-color
+);
+$elevator-list-item-font-size: var(--u-elevator-list-item-font-size, 24px);
+$elevator-list-item-font-color: var(--u-elevator-list-item-font-color, $gray1);
+$elevator-list-item-name-padding: var(
+	--u-elevator-list-item-name-padding,
+	0 40px
+);
+$elevator-list-item-name-height: var(--u-elevator-list-item-name-height, 60px);
+$elevator-list-item-name-line-height: var(
+	--u-elevator-list-item-name-line-height,
+	60px
+);
+$elevator-list-item-code-font-size: var(
+	--u-elevator-list-item-code-font-size,
+	28px
+);
+$elevator-list-item-code-font-color: var(
+	--u-elevator-list-item-code-font-color,
+	$gray1
+);
+$elevator-list-item-code-font-weight: var(
+	--u-elevator-list-item-code-font-weight,
+	500
+);
+$elevator-list-item-code-padding: var(
+	--u-elevator-list-item-code-padding,
+	0 40px
+);
+$elevator-list-item-code-height: var(--u-elevator-list-item-code-height, 70px);
+$elevator-list-item-code-line-height: var(
+	--u-elevator-list-item-code-line-height,
+	70px
+);
+$elevator-list-item-code-after-width: var(
+	--u-elevator-list-item-code-after-width,
+	100%
+);
+$elevator-list-item-code-after-height: var(
+	--u-elevator-list-item-code-after-height,
+	1px
+);
+$elevator-list-item-code-after-bg-color: var(
+	--u-elevator-list-item-code-after-bg-color,
+	#f5f5f5
+);
+$elevator-list-item-code-current-box-shadow: 0 3px 3px 1px
+	rgba(240, 240, 240, 1);
+$elevator-list-item-code-current-bg-color: var(
+	--u-elevator-list-item-code-current-bg-color,
+	#fff
+);
+$elevator-list-item-code-current-border-radius: var(
+	--u-elevator-list-item-code-current-border-radius,
+	50%
+);
+$elevator-list-item-code-current-width: var(
+	--u-elevator-list-item-code-current-width,
+	90px
+);
+$elevator-list-item-code-current-height: var(
+	--u-elevator-list-item-code-current-height,
+	90px
+);
+$elevator-list-item-code-current-line-height: var(
+	--u-elevator-list-item-code-current-line-height,
+	90px
+);
+$elevator-list-item-code-current-position: var(
+	--u-elevator-list-item-code-current-position,
+	absolute
+);
+$elevator-list-item-code-current-right: var(
+	--u-elevator-list-item-code-current-right,
+	120px
+);
+$elevator-list-item-code-current-top: var(
+	--u-elevator-list-item-code-current-top,
+	50%
+);
+$elevator-list-item-code-current-transform: var(
+	--u-elevator-list-item-code-current-transform,
+	translateY(-50%)
+);
+$elevator-list-item-code-current-text-align: var(
+	--u-elevator-list-item-code-current-text-align,
+	center
+);
+$elevator-list-item-bars-position: var(
+	--u-elevator-list-item-bars-position,
+	absolute
+);
+$elevator-list-item-bars-right: var(--u-elevator-list-item-bars-right, 16px);
+$elevator-list-item-bars-top: var(--u-elevator-list-item-bars-top, 50%);
+$elevator-list-item-bars-transform: var(
+	--u-elevator-list-item-bars-transform,
+	translateY(-50%)
+);
+$elevator-list-item-bars-padding: var(
+	--u-elevator-list-item-bars-padding,
+	30px 0
+);
+$elevator-list-item-bars-background-color: var(
+	--u-elevator-list-item-bars-background-color,
+	#eeeff2
+);
+$elevator-list-item-bars-border-radius: var(
+	--u-elevator-list-item-bars-border-radius,
+	12px
+);
+$elevator-list-item-bars-text-align: var(
+	--u-elevator-list-item-bars-text-align,
+	center
+);
+$elevator-list-item-bars-z-index: var(--u-elevator-list-item-bars-z-index, 1);
+$elevator-list-item-bars-inner-item-padding: var(
+	--u-elevator-list-item-bars-inner-item-padding,
+	6px
+);
+$elevator-list-item-bars-inner-item-font-size: var(
+	--u-elevator-list-item-bars-inner-item-font-size,
+	20px
+);
+$elevator-list-fixed-color: var(--u-elevator-list-fixed-color, $primary-color);
+$elevator-list-fixed-bg-color: var(--u-elevator-list-fixed-bg-color, #ffffff);
+$elevator-list-fixed-box-shadow: var(
+	--u-elevator-list-fixed-box-shadow,
+	0 0 20px #eee
+);
+$elevator-list-item-bars-inner-item-active-color: var(
+	--u-elevator-list-item-bars-inner-item-active-color,
+	$primary-color
+);
+
+.u-elevator {
+	width: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	&__list {
+		display: block;
+		position: relative;
+		top: 1px;
+		overflow: hidden;
+		&__inner {
+			height: 100%;
+			width: 100%;
+			display: block;
+			background-color: $elevator-list-inner-bg-color;
+			//   overflow: auto;
+		}
+		&__item {
+			display: block;
+			font-size: $elevator-list-item-font-size;
+			color: $elevator-list-item-font-color;
+			&__code {
+				display: flex;
+				position: relative;
+				height: $elevator-list-item-code-height;
+				line-height: $elevator-list-item-code-line-height;
+				font-size: $elevator-list-item-code-font-size;
+				color: $elevator-list-item-code-font-color;
+				padding: $elevator-list-item-code-padding;
+				font-weight: $elevator-list-item-code-font-weight;
+				box-sizing: border-box;
+				&::after {
+					content: ' ';
+					width: $elevator-list-item-code-after-width;
+					height: $elevator-list-item-code-after-height;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					background-color: $elevator-list-item-code-after-bg-color;
+				}
+			}
+			&__name {
+				display: flex;
+				align-items: center;
+				padding: $elevator-list-item-name-padding;
+				height: $elevator-list-item-name-height;
+				line-height: $elevator-list-item-name-line-height;
+				&--highcolor {
+					color: $elevator-list-item-highcolor;
+				}
+			}
+		}
+		&__fixed {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			padding: $elevator-list-item-code-padding;
+			height: $elevator-list-item-code-height;
+			line-height: $elevator-list-item-code-line-height;
+			font-size: $elevator-list-item-code-font-size;
+			color: $elevator-list-fixed-color;
+			font-weight: $elevator-list-item-code-font-weight;
+			background-color: $elevator-list-fixed-bg-color;
+			box-sizing: border-box;
+			box-shadow: $elevator-list-fixed-box-shadow;
+		}
+	}
+	&__code--current {
+		position: $elevator-list-item-code-current-position;
+		right: $elevator-list-item-code-current-right;
+		top: $elevator-list-item-code-current-top;
+		transform: $elevator-list-item-code-current-transform;
+		width: $elevator-list-item-code-current-width;
+		height: $elevator-list-item-code-current-height;
+		line-height: $elevator-list-item-code-current-line-height;
+		border-radius: $elevator-list-item-code-current-border-radius;
+		background: $elevator-list-item-code-current-bg-color;
+		box-shadow: $elevator-list-item-code-current-box-shadow;
+		text-align: $elevator-list-item-code-current-text-align;
+	}
+	&__bars {
+		position: $elevator-list-item-bars-position;
+		right: $elevator-list-item-bars-right;
+		top: $elevator-list-item-bars-top;
+		transform: $elevator-list-item-bars-transform;
+		padding: $elevator-list-item-bars-padding;
+		background-color: $elevator-list-item-bars-background-color;
+		border-radius: $elevator-list-item-bars-border-radius;
+		text-align: $elevator-list-item-bars-text-align;
+		z-index: $elevator-list-item-bars-z-index;
+		&__inner {
+			&__item {
+				display: block;
+				padding: $elevator-list-item-bars-inner-item-padding;
+				font-size: $elevator-list-item-bars-inner-item-font-size;
+				&--active {
+					color: $elevator-list-item-bars-inner-item-active-color;
+				}
+				cursor: pointer;
+			}
+		}
+	}
+}

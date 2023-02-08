@@ -1,0 +1,73 @@
+$indicator-dot-margin: var(--u-indicator-dot-margin, 4px) !default;
+$indicator-dot-vertical-margin: var(
+	--u-indicator-dot-vertical-margin,
+	4px
+) !default;
+$indicator-dot-first-margin: var(--u-indicator-dot-first-margin) !default;
+$indicator-dot-last-margin: var(--u-indicator-dot-last-margin) !default;
+$indicator-dot-color: var(
+	--u-indicator-dot-color,
+	rgba(51, 51, 51, 0.3)
+) !default;
+$indicator-dot-active-color: var(
+	--u-indicator-dot-active-color,
+	#333333
+) !default;
+$indicator-dot-w: var(--u-indicator-dot-w, 12px) !default;
+$indicator-dot-h: var(--u-indicator-dot-h, 8px) !default;
+$indicator-dot-active-w: var(--u-indicator-dot-active-w, 32px) !default;
+$indicator-dot-active-h: var(--u-indicator-dot-active-h, 12px) !default;
+$indicator-dot-radius: var(--u-indicator-dot-radius, 13px) !default;
+
+.u-indicator {
+	&__block {
+		display: block;
+		width: 100%;
+	}
+	&__align__left {
+		text-align: left;
+	}
+	&__align__right {
+		text-align: right;
+	}
+	&__align__center {
+		text-align: center;
+	}
+	&__dot {
+		margin: 0 $indicator-dot-margin;
+		&:first-child {
+			margin-left: $indicator-dot-first-margin;
+		}
+		&:last-child {
+			margin-right: $indicator-dot-last-margin;
+		}
+	}
+	&__dot {
+		display: inline-block;
+		vertical-align: middle;
+		width: $indicator-dot-w;
+		height: $indicator-dot-h;
+		background-color: $indicator-dot-color;
+		border-radius: $indicator-dot-radius;
+	}
+	&__dot-activated {
+		width: $indicator-dot-active-w;
+		height: $indicator-dot-active-h;
+		background-color: $indicator-dot-active-color;
+	}
+	&__vertical {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.u-indicator__dot {
+			margin: $indicator-dot-vertical-margin 0;
+			&:first-child {
+				margin-top: $indicator-dot-first-margin;
+			}
+			&:last-child {
+				margin-bottom: $indicator-dot-last-margin;
+			}
+		}
+	}
+}
