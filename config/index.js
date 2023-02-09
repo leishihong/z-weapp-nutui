@@ -40,8 +40,8 @@ const config = {
 		constants: pathResolve('src/constants')
 	},
 	sass: {
-		resource: [pathResolve('src/styles/nutui-theme.scss')],
-		data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";`
+		// resource: [pathResolve('src/styles/nutui-theme.scss')],
+		// data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";`
 	},
 	mini: {
     // webpackChain(chain, webpack) {

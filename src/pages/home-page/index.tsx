@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button,Elevator } from '@nutui/nutui-react-taro';
 
 import {
 	EmptyPage,
 	UPopup,
 	UIndicator,
 	UNoticeBar,
-	UElevator
+	UElevator,
+	UEditor,
+	UVideo,
+	UTaroVideo
 } from 'components/index';
 import cx from './index.module.scss';
 
@@ -132,6 +134,9 @@ const Index = () => {
 	const onClickIndex = (key: string) => {
 		console.log(key);
 	};
+	const play = (elm: HTMLVideoElement) => console.log('play', elm);
+	const pause = (elm: HTMLVideoElement) => console.log('pause', elm);
+	const playend = (elm: HTMLVideoElement) => console.log('playend', elm);
 	return (
 		<div className={cx['nutui-react']}>
 			{/* <Elevator
@@ -141,15 +146,37 @@ const Index = () => {
 				onClickItem={(key: string, item: any) => onClickItem(key, item)}
 				onClickIndex={(key: string) => onClickIndex(key)}
 			/> */}
+			<UTaroVideo
+				src="https://storage.360buyimg.com/nutui/video/video_NutUI.mp4"
+				videoId="12"
+			/>
+			{/* <UVideo
+				source={{
+					src: 'https://storage.360buyimg.com/nutui/video/video_NutUI.mp4',
+					type: 'video/mp4'
+				}}
+				options={{
+					controls: true,
+					autoplay: true,
+					muted: true,
+					playsinline: true,
+					loop: true
+				}}
+				onPlayFuc={play}
+				onPauseFuc={pause}
+				onPlayend={playend}
+			/> */}
 			<UElevator
+				r-if={false}
 				indexList={dataList}
 				height="400"
 				isSticky
 				onClickItem={(key: string, item: any) => onClickItem(key, item)}
 				onClickIndex={(key: string) => onClickIndex(key)}
 			/>
+			<UEditor r-if={false} editorId="test" content="kjkfjkejfkejfkejfk" />
 			<EmptyPage />
-			<Button type="primary">NutUI React Button</Button>
+
 			<UNoticeBar scrollable>
 				在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
 			</UNoticeBar>
@@ -158,7 +185,7 @@ const Index = () => {
 			</UNoticeBar>
 			<UIndicator block />
 			<UPopup visible={false} placement="bottom" rounded>
-				<Button type="primary">NutUI React Button</Button>
+      在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准
 			</UPopup>
 		</div>
 	);

@@ -1,0 +1,227 @@
+.u-theme-dark {
+  .u-range-container {
+    background: #131313;
+    .min,
+    .max {
+      color: #808080;
+    }
+    .u-range {
+      &-mark-text {
+        color: #808080;
+      }
+      &-button {
+        .number {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.u-range-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 8px;
+  align-items: center;
+  .min,
+  .max {
+    font-size: 24px;
+    color: #666666;
+    user-select: none;
+  }
+  &-vertical {
+    height: 100%;
+    flex-direction: column;
+    padding: 0px 30px;
+    .u-range {
+      width: 8px;
+      height: 100%;
+      &-button {
+        &-wrapper,
+        &-wrapper-right {
+          position: absolute;
+          top: initial;
+          bottom: 0px;
+          left: 50%;
+          right: initial;
+          transform: translate3d(-50%, 50%, 0);
+        }
+
+        &-wrapper-left {
+          top: 0px;
+          left: 50%;
+          right: initial;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+      .number {
+        transform: translate3d(44px, 0, 0);
+      }
+      &-vertical {
+        margin: 20px 0px;
+      }
+      &-mark {
+        position: absolute;
+        width: 100%;
+        right: 50%;
+        overflow: visible;
+        font-size: 24px;
+        height: 100%;
+        top: initial;
+        width: 72px;
+        padding: 0px;
+      }
+
+      &-mark-text {
+        width: 40px;
+        position: absolute;
+        display: inline-block;
+        line-height: 32px;
+        color: #999;
+        text-align: center;
+        word-break: keep-all;
+        user-select: none;
+        transform: translateY(-50%);
+        &-active {
+          .u-range-tick {
+            background: linear-gradient(135deg, #fa2c19 0%, #fa6419 100%);
+          }
+        }
+      }
+      &-tick {
+        position: absolute;
+        top: 0px;
+        left: 60px;
+        width: 22px;
+        height: 22px;
+        margin-left: -0px;
+        border-radius: 50%;
+        background-color: #fa958c;
+      }
+    }
+  }
+}
+.u-range {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(#fa2c19, 0.5);
+  border-radius: 20px;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    top: -16px;
+    right: 0;
+    bottom: -16px;
+    left: 0;
+    content: '';
+  }
+
+  &-bar {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fa2c19 0%, #fa6419 100%);
+    border-radius: inherit;
+    transition: all 0.2s;
+  }
+
+  &-button {
+    display: block;
+    width: 38px;
+    height: 38px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid #fa2c19;
+    outline: none;
+
+    &-wrapper,
+    &-wrapper-right {
+      touch-action: none;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate3d(50%, -50%, 0);
+      cursor: grab;
+      outline: none;
+    }
+
+    &-wrapper-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(-50%, -50%, 0);
+      cursor: grab;
+      outline: none;
+      touch-action: none;
+    }
+
+    .number {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      font-size: 28px;
+      line-height: 33px;
+      // margin-bottom: 8px;
+      font-family: PingFang SC-Medium, PingFang SC;
+      color: #333333;
+      font-weight: 500;
+      transform: translate3d(0, -38px, 0);
+    }
+  }
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 0.54;
+
+    .u-range-button-wrapper,
+    .u-range-button-wrapper-left,
+    .u-range-button-wrapper-right {
+      cursor: not-allowed;
+    }
+  }
+  &-show-number {
+    margin: 0 32px;
+  }
+
+  &-mark {
+    position: absolute;
+    width: 100%;
+    overflow: visible;
+    top: 50%;
+    font-size: 24px;
+    padding-top: 28px;
+  }
+
+  &-mark-text {
+    position: absolute;
+    display: inline-block;
+    line-height: 32px;
+    color: #999;
+    text-align: center;
+    word-break: keep-all;
+    user-select: none;
+    transform: translateX(-50%);
+    &-active {
+      .u-range-tick {
+        background: linear-gradient(135deg, #fa2c19 0%, #fa6419 100%);
+      }
+    }
+  }
+  &-tick {
+    position: absolute;
+    top: -40px;
+    width: 22px;
+    height: 22px;
+    // margin-left: -11Px;
+    left: 0px;
+    border-radius: 50%;
+    background-color: #fa958c;
+  }
+}

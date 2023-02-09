@@ -87,18 +87,16 @@ const EmptyPage: FC<IProps> = (props) => {
 				{emptyText}
 			</View>
 			{renderEmptyBtn}
-			{showButton && (
-				<View className={cx['empty-footer-btn']}>
-					<View className={cls(cx.emptyBtnText)} onClick={handelRefresh}>
-						{emptyBtnText}
-					</View>
-					{pages.length > 1 && showBackBtn && (
-						<View className={cx['emptyBack']} onClick={handleBack}>
-							返回上一页
-						</View>
-					)}
+			<View className={cx['empty-footer-btn']} r-if={showButton}>
+				<View className={cls(cx.emptyBtnText)} onClick={handelRefresh}>
+					{emptyBtnText}
 				</View>
-			)}
+				{pages.length > 1 && showBackBtn && (
+					<View className={cx['emptyBack']} onClick={handleBack}>
+						返回上一页
+					</View>
+				)}
+			</View>
 		</View>
 	);
 };

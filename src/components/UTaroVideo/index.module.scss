@@ -1,0 +1,75 @@
+$video-w: var(--u-video-w, 100%);
+$video-h: var(--u-video-h, 422px);
+
+.taro-video {
+	width: $video-w;
+	height: $video-h;
+	position: relative;
+	.videoPoster {
+		position: absolute;
+		width: 136px;
+		height: 136px;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 99999;
+		image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__play {
+		width: 100%;
+		height: 100%;
+		background: #000;
+		object-fit: fill;
+		&:focus {
+			outline: none;
+		}
+	}
+	&__network {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 420px;
+		background-color: #000;
+		text-align: center;
+		&__title {
+			padding-top: 128px;
+			color: #fff;
+			font-size: 32px;
+			line-height: 44px;
+			font-family: PingFang SC-Regular, PingFang SC;
+		}
+		&__btn {
+			margin: 40px auto 0;
+			width: 228px;
+			height: 80px;
+			background: linear-gradient(
+				135deg,
+				#dda6b7 0%,
+				rgba(255, 128, 143, 0.99) 100%
+			);
+			border-radius: 80px;
+			font-size: 26px;
+			font-weight: 600;
+			color: #ffffff;
+			line-height: 80px;
+		}
+		.networkDesc {
+			text-align: center;
+			color: #50ff57;
+			text-decoration: underline;
+			font-size: 22px;
+			font-family: PingFang SC-Regular, PingFang SC;
+			font-weight: 400;
+			margin-top: 20px;
+		}
+	}
+}

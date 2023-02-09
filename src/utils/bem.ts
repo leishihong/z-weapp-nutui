@@ -2,6 +2,10 @@ import { withNaming } from '@bem-react/classname';
 
 const cn = withNaming({ n: 'u-', e: '__', m: '--', v: '-' });
 
+const UWithNaming = (options = {}) => {
+	const config = Object.assign({ n: 'u-', e: '__', m: '--', v: '-' }, options);
+	return withNaming(config);
+};
 // const b = cn('icon', 'Element')
 //
 // console.log(b()) // nut-icon__Element
@@ -16,4 +20,4 @@ const cn = withNaming({ n: 'u-', e: '__', m: '--', v: '-' });
 
 export default cn;
 
-export { withNaming };
+export { UWithNaming };

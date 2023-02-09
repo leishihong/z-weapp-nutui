@@ -8,6 +8,12 @@ import URichTextRenderer from './URichTextRenderer';
 import UIndicator from './UIndicator';
 import UNoticeBar from './UNoticeBar';
 import UElevator from './UElevator';
+import URange from './URange';
+import UIconFont from './UIconFont';
+import UAudio from './UAudio';
+import UVideo from './UVideo';
+import UEditor from './UEditor';
+import UTaroVideo from './UTaroVideo';
 
 export {
 	EmptyPage,
@@ -17,7 +23,13 @@ export {
 	Transition,
 	UPopup,
 	URichTextRenderer,
-  UIndicator,
-  UNoticeBar,
-  UElevator
+	UIndicator,
+	UNoticeBar,
+	UElevator,
+	URange,
+	UIconFont,
+	UAudio,
+	UVideo,
+  UEditor,
+  UTaroVideo
 };

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Cell } from '@nutui/nutui-react-taro';
 
 const Index = () => {
-  return <Button type="primary">NutUI React Button</Button>;
+  return <div>1212</div>
 };
 
 export default Index;

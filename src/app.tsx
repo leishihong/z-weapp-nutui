@@ -15,7 +15,7 @@ const App: FC<PropsWithChildren> = (props) => {
     //   const tabBar = Taro.getTabBar<any>(page);
     //   tabBar?.setSelected(tabBarState.selectedIndex);
     // }
-    // dispatch({ type: 'tabBarState/setTabBarIndex', payload: { selectedIndex: tabBarState.selectedIndex } });
+    // dispatch({ type: 'tabBarState/setState', payload: { selectedIndex: tabBarState.selectedIndex } });
     handleUpdate();
   });
   Taro.onPageNotFound((options) => {

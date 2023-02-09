@@ -13,7 +13,7 @@ import React, {
 } from 'react';
 import { View, Block, Image, Swiper, SwiperItem } from '@tarojs/components';
 import { ViewProps } from '@tarojs/components/types/View';
-import { nextTick } from '@tarojs/taro';
+import { nextTick, useDidShow } from '@tarojs/taro';
 import cls from 'classnames';
 
 import IconCloseDark from 'assets/icon-close-dark.png';
@@ -141,9 +141,13 @@ const UNoticeBar: FC<NoticeBarProps> = (props) => {
 			);
 		}, +delay);
 	}
-
-	useEffect(() => {
+	useDidShow(() => {
 		nextTick(start);
+	});
+	useEffect(() => {
+		return () => {
+			clearTimeout(startTimerRef.current);
+		};
 	}, []);
 
 	const onClickIcon = useCallback((event) => {

@@ -20,7 +20,8 @@ const CustomTabBar: FC = () => {
 		tabList,
 		color,
 		selectedColor,
-		selectedIndex = 0
+		selectedIndex = 0,
+		showTabBar
 	} = useSelector(({ tabBarState }) => tabBarState);
 	const dispatch = useDispatch();
 
@@ -31,7 +32,7 @@ const CustomTabBar: FC = () => {
 				url: TAB[item.pageName],
 				success: () => {
 					dispatch({
-						type: 'tabBarState/setTabBarIndex',
+						type: 'tabBarState/setState',
 						payload: { selectedIndex: index }
 					});
 				}
@@ -42,11 +43,15 @@ const CustomTabBar: FC = () => {
 
 	const renderTabBar = useMemo(() => {
 		return (
-			<View className={cls(cx['tab-bar'], 'safe-area-bottom')}>
+			<View
+				className={cls(cx['tab-bar'], 'safe-area-bottom',{[cx['show-tab-bar']]:showTabBar})}
+			>
 				{tabList.map((item, index) => {
 					return (
 						<View
-							className={cx['tab-bar-item']}
+							className={cls(cx['tab-bar-item'], {
+								[cx['tab-bar-item--active']]: selectedIndex === index
+							})}
 							onClick={() => onSwitchTab(item, index)}
 							data-path={item.pagePath}
 							key={item.pagePath}
@@ -72,7 +77,7 @@ const CustomTabBar: FC = () => {
 				})}
 			</View>
 		);
-	}, [selectedIndex]);
+	}, [selectedIndex, showTabBar]);
 
 	return renderTabBar;
 };
