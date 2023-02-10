@@ -7,9 +7,12 @@ import {
 	UNoticeBar,
 	UElevator,
 	UEditor,
-	UVideo,
+	ZButton,
 	UTaroVideo
 } from 'components/index';
+
+import {storageCache} from 'utils/storageCache'
+
 import cx from './index.module.scss';
 
 const Index = () => {
@@ -130,7 +133,7 @@ const Index = () => {
 	const onClickItem = (key: string, item: any) => {
 		console.log(key, JSON.stringify(item));
 	};
-
+  storageCache('id')
 	const onClickIndex = (key: string) => {
 		console.log(key);
 	};
@@ -146,6 +149,7 @@ const Index = () => {
 				onClickItem={(key: string, item: any) => onClickItem(key, item)}
 				onClickIndex={(key: string) => onClickIndex(key)}
 			/> */}
+      <ZButton type="info" plain>block</ZButton>
 			<UTaroVideo
 				src="https://storage.360buyimg.com/nutui/video/video_NutUI.mp4"
 				videoId="12"

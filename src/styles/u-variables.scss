@@ -1,7 +1,7 @@
 // Color Palette
-$black: #000;
+$black: #000000;
 $black-rgb: 0, 0, 0;
-$white: #fff;
+$white: #ffffff;
 
 $gray-1: #f7f8fa;
 $gray-2: #f2f3f5;
@@ -12,8 +12,8 @@ $gray-6: #969799;
 $gray-7: #646566;
 $gray-8: #323233;
 // 主色调
-$primary-color: #1989fa;
-$primary-link-color: #396acc !default;
+$primary-color: #1C1C1E;
+$primary-link-color: #396acc ;
 $danger-color: #ee0a24;
 $info-color: #2db7f5;
 $success-color: #07c160;
@@ -21,16 +21,15 @@ $warning-color: #ff976a;
 
 $orange-dark: #ed6a0c;
 $orange-light: #fffbe8;
-// Base Unit
-$hd: 2 !default;
+
 // 标题常规文字
-$title-color: $gray1 !default;
+$title-color: $gray1 ;
 // 副标题
-$title-color2: $gray2 !default;
+$title-color2: $gray2 ;
 // 次内容
-$text-color: $gray2 !default;
+$text-color: $gray2 ;
 // 辅助色
-$help-color: $gray5 !default;
+$help-color: $gray5 ;
 // Gradient Colors
 $gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
 $gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);

@@ -27,5 +27,10 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
+  },
+  "permission": {
+    "scope.useLocation": {
+      "desc": "基于用户地理位置获得附近社团，同城活动推荐"
+    }
   }
 }

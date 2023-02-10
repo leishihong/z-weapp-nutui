@@ -61,7 +61,7 @@ export interface PopupProps extends ViewProps {
   showToolbar?: boolean;
   showHeaderBtn?: boolean;
 
-  footer?: ReactNode;
+  footer?: ReactNode|any;
   footerBtnList?: Array<IFooterBtnList>;
 
   closeable?: boolean;

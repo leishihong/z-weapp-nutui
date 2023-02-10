@@ -14,6 +14,7 @@ import UAudio from './UAudio';
 import UVideo from './UVideo';
 import UEditor from './UEditor';
 import UTaroVideo from './UTaroVideo';
+import ZButton from './ZButton';
 
 export {
 	EmptyPage,
@@ -31,5 +32,6 @@ export {
 	UAudio,
 	UVideo,
   UEditor,
-  UTaroVideo
+  UTaroVideo,
+  ZButton
 };

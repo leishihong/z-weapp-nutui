@@ -1,21 +1,28 @@
+$cell-group-padding: var(--u-cell-group-padding, 60px);
+$cell-group-title-padding: var(--u-cell-group-title-padding, 22px);
+$cell-group-title-color: var(--u-cell-group-title-color, #333333);
+$cell-group-title-font-size: var(--u-cell-group-title-font-size, 30px);
+$cell-group-title-line-height: var(--u-cell-group-title-line-height, 35px);
+$cell-group-title-font-weight: var(--u-cell-group-title-font-weight, 600);
+
 .u-cell-group {
-  padding-bottom: 60px;
-  &-wrap {
-    display: flex;
-    align-items: center;
-    padding-bottom: 22px;
-  }
-  &:last-child {
-    padding-bottom: 0;
-  }
-  &-title {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    font-family: PingFang SC-Semibold, PingFang SC;
-    font-weight: 600;
-    color: #333333;
-    line-height: 35px;
-  }
+	padding-bottom: $cell-group-padding;
+	&-wrap {
+		display: flex;
+		align-items: center;
+		padding-bottom: $cell-group-title-padding;
+	}
+	&:last-child {
+		padding-bottom: 0;
+	}
+	&-title {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		font-size: $cell-group-title-font-size;
+		font-family: PingFang SC-Semibold, PingFang SC;
+		font-weight: $cell-group-title-font-weight;
+		color: $cell-group-title-color;
+		line-height: $cell-group-title-line-height;
+	}
 }

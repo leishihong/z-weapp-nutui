@@ -1,9 +1,13 @@
 import React, { FC, PropsWithChildren, useEffect } from 'react';
 import Taro, { useDidShow } from '@tarojs/taro';
 import { Provider } from 'react-redux';
+
+import StartLaunch from 'pages/start-launch/index'
+
 import { handleUpdate } from 'utils/taroUpdateManager';
 import store from 'store/index';
 import { getSystemInfo } from 'utils/getSystemInfo';
+
 
 import './app.scss';
 
@@ -34,6 +38,9 @@ const App: FC<PropsWithChildren> = (props) => {
       dispatch({ type: 'globalsState/getNetworkType' });
     });
   }, []);
-	return <Provider store={store}>{props.children}</Provider>;
+	return <Provider store={store}>
+    <StartLaunch children={props.children} />
+    {/* {props.children} */}
+    </Provider>;
 };
 export default App;
