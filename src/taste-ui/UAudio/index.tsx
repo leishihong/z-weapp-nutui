@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { createInnerAudioContext, InnerAudioContext } from '@tarojs/taro';
 import cls from 'classnames';
-import { URange, UIconFont } from 'components/index';
+import { URange, UIconFont } from 'taste-ui/index';
 
 import bem from 'utils/bem';
 import cx from './index.module.scss';

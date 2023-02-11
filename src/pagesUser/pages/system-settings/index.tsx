@@ -19,7 +19,7 @@ import cls from 'classnames';
 import { isEmpty } from 'lodash';
 
 import { TAB, URL } from 'constants/router';
-import { Avatar, UCell, UPopup } from 'components/index';
+import { Avatar, UCell, UPopup } from 'taste-ui/index';
 import { formatWebUrl } from 'constants/router';
 import { jumpWebview, stringifyQuery } from 'utils/utils';
 import { handleUpdate } from 'utils/taroUpdateManager';

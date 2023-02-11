@@ -6,7 +6,7 @@ import { EnterHandler, ExitHandler } from 'react-transition-group/Transition';
 import { preventDefault } from 'utils/dom/event';
 import {isEmpty,map,isUndefined,isNumber} from 'lodash';
 
-import { Avatar } from 'components/index';
+import { Avatar } from 'taste-ui/index';
 import Transition, { TransitionName } from '../Transition';
 
 import { PopupPlacement } from './type';

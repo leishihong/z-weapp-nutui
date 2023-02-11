@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 import { View, Block } from '@tarojs/components';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { UPopup } from 'components/index';
+import { UPopup } from 'taste-ui/index';
 
 const PageContainer: FC<any> = (props) => {
 	const { children } = props;

@@ -3,7 +3,7 @@ import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 
 import store from 'store/index';
-import { UPopup } from 'components/index';
+import { UPopup } from 'taste-ui/index';
 
 const StartLaunch: FC<PropsWithChildren> = (props) => {
 	useEffect(() => {

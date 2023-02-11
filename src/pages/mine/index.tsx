@@ -1,6 +1,6 @@
 import React from 'react';
 import Taro from '@tarojs/taro';
-import { Avatar } from 'components/index';
+import { Avatar } from 'taste-ui/index';
 import { URL, TAB } from 'constants/router';
 
 import cx from './index.module.scss';
