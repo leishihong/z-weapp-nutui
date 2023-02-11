@@ -37,45 +37,46 @@ const config = {
 		libs: pathResolve('src/libs'),
 		styles: pathResolve('src/styles'),
 		hooks: pathResolve('src/hooks'),
-		constants: pathResolve('src/constants')
+		constants: pathResolve('src/constants'),
+		'taste-ui': pathResolve('src/taste-ui')
 	},
 	sass: {
 		// resource: [pathResolve('src/styles/nutui-theme.scss')],
 		// data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";`
 	},
 	mini: {
-    // webpackChain(chain, webpack) {
-    //   chain.optimization.splitChunks({
-    //     chunks: 'all',
-    //     maxInitialRequests: Infinity,
-    //     minSize: 0,
-    //     cacheGroups: {
-    //       common: {
-    //         name: 'common',
-    //         minChunks: 2,
-    //         priority: 1,
-    //       },
-    //       vendors: {
-    //         name: 'vendors',
-    //         minChunks: 2,
-    //         test: (module) => {
-    //           return /[\\/]node_modules[\\/]/.test(module.resource)
-    //         },
-    //         priority: 10,
-    //       },
-    //       // taro: {
-    //       //   name: 'taro',
-    //       //   test: (module) => {
-    //       //     if (/@tarojs[\\/][a-z]+/.test(module.context)) {
-    //       //       console.log(module.context)
-    //       //     }
-    //       //     return /@tarojs[\\/][a-z]+/.test(module.context)
-    //       //   },
-    //       //   priority: 100,
-    //       // },
-    //     },
-    //   })
-    // },
+		// webpackChain(chain, webpack) {
+		//   chain.optimization.splitChunks({
+		//     chunks: 'all',
+		//     maxInitialRequests: Infinity,
+		//     minSize: 0,
+		//     cacheGroups: {
+		//       common: {
+		//         name: 'common',
+		//         minChunks: 2,
+		//         priority: 1,
+		//       },
+		//       vendors: {
+		//         name: 'vendors',
+		//         minChunks: 2,
+		//         test: (module) => {
+		//           return /[\\/]node_modules[\\/]/.test(module.resource)
+		//         },
+		//         priority: 10,
+		//       },
+		//       // taro: {
+		//       //   name: 'taro',
+		//       //   test: (module) => {
+		//       //     if (/@tarojs[\\/][a-z]+/.test(module.context)) {
+		//       //       console.log(module.context)
+		//       //     }
+		//       //     return /@tarojs[\\/][a-z]+/.test(module.context)
+		//       //   },
+		//       //   priority: 100,
+		//       // },
+		//     },
+		//   })
+		// },
 		postcss: {
 			pxtransform: {
 				enable: true,

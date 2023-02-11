@@ -32,7 +32,8 @@
       "libs/*": ["./src/libs/*"],
       "pages/*": ["./src/pages/*"],
       "styles/*": ["./src/styles/*"],
-      "constants/*": ["./src/constants/*"]
+      "constants/*": ["./src/constants/*"],
+      "taste-ui/*": ["./src/taste-ui/*"],
     }
   },
   "include": ["./src", "./types"],

@@ -1,5 +1,8 @@
 import React from 'react';
+import { View } from '@tarojs/components';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { PageContainer } from 'components/index';
 import {
 	EmptyPage,
 	UPopup,
@@ -7,11 +10,10 @@ import {
 	UNoticeBar,
 	UElevator,
 	UEditor,
-	ZButton,
-	UTaroVideo
-} from 'components/index';
+	UButton
+} from 'taste-ui/index';
 
-import {storageCache} from 'utils/storageCache'
+import { storageCache } from 'utils/storageCache';
 
 import cx from './index.module.scss';
 
@@ -133,7 +135,7 @@ const Index = () => {
 	const onClickItem = (key: string, item: any) => {
 		console.log(key, JSON.stringify(item));
 	};
-  storageCache('id')
+	storageCache('id');
 	const onClickIndex = (key: string) => {
 		console.log(key);
 	};
@@ -141,20 +143,19 @@ const Index = () => {
 	const pause = (elm: HTMLVideoElement) => console.log('pause', elm);
 	const playend = (elm: HTMLVideoElement) => console.log('playend', elm);
 	return (
-		<div className={cx['nutui-react']}>
-			{/* <Elevator
+		<PageContainer>
+			<div className={cx['nutui-react']}>
+				{/* <Elevator
 				indexList={dataList}
 				height="400"
 				isSticky
 				onClickItem={(key: string, item: any) => onClickItem(key, item)}
 				onClickIndex={(key: string) => onClickIndex(key)}
 			/> */}
-      <ZButton type="info" plain>block</ZButton>
-			<UTaroVideo
-				src="https://storage.360buyimg.com/nutui/video/video_NutUI.mp4"
-				videoId="12"
-			/>
-			{/* <UVideo
+				<UButton type="info" plain>
+					block
+				</UButton>
+				{/* <UVideo
 				source={{
 					src: 'https://storage.360buyimg.com/nutui/video/video_NutUI.mp4',
 					type: 'video/mp4'
@@ -170,28 +171,28 @@ const Index = () => {
 				onPauseFuc={pause}
 				onPlayend={playend}
 			/> */}
-			<UElevator
-				r-if={false}
-				indexList={dataList}
-				height="400"
-				isSticky
-				onClickItem={(key: string, item: any) => onClickItem(key, item)}
-				onClickIndex={(key: string) => onClickIndex(key)}
-			/>
-			<UEditor r-if={false} editorId="test" content="kjkfjkejfkejfkejfk" />
-			<EmptyPage />
+				<UElevator
+					indexList={dataList}
+					height="400"
+					isSticky
+					onClickItem={(key: string, item: any) => onClickItem(key, item)}
+					onClickIndex={(key: string) => onClickIndex(key)}
+				/>
+				<UEditor r-if={false} editorId="test" content="kjkfjkejfkejfkejfk" />
+				<EmptyPage />
 
-			<UNoticeBar scrollable>
-				在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
-			</UNoticeBar>
-			<UNoticeBar scrollable={false}>
-				在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
-			</UNoticeBar>
-			<UIndicator block />
-			<UPopup visible={false} placement="bottom" rounded>
-      在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准
-			</UPopup>
-		</div>
+				<UNoticeBar scrollable>
+					在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+				</UNoticeBar>
+				<UNoticeBar scrollable={false}>
+					在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+				</UNoticeBar>
+				<UIndicator block />
+				<UPopup visible={false} placement="bottom" rounded>
+					在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准
+				</UPopup>
+			</div>
+		</PageContainer>
 	);
 };
 

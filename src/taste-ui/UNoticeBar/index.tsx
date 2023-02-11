@@ -146,6 +146,7 @@ const UNoticeBar: FC<NoticeBarProps> = (props) => {
 	});
 	useEffect(() => {
 		return () => {
+			reset();
 			clearTimeout(startTimerRef.current);
 		};
 	}, []);
