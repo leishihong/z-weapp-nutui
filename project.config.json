@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "z-weapp-nutui",
   "description": "",
-  "appid": "wx9f9859f9f6b3a137",
+  "appid": "wx9d806e54553f5344",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -23,7 +23,48 @@
     "ignore": [],
     "include": []
   },
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/home-page/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "活动",
+          "pathName": "pages/activity/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pagesUser/pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "手机验证码登录",
+          "pathName": "pagesUser/pages/code-login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pagesUser/pages/system-settings/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2

@@ -9,6 +9,22 @@ export default defineAppConfig({
 		'pages/land/index'
 	],
 	tabBar: tabBarConfig,
+	subPackages: [
+		{
+			root: 'pagesUser',
+			name: 'pagesUser',
+			pages: [
+				'pages/system-settings/index',
+				'pages/login/index',
+				'pages/code-login/index'
+			]
+		},
+		{
+			root: 'pagesActivity',
+			name: 'pagesActivity',
+			pages: ['pages/activity-detail/index']
+		}
+	],
 	networkTimeout: {
 		request: 20000,
 		downloadFile: 10000
@@ -16,8 +32,9 @@ export default defineAppConfig({
 	window: {
 		backgroundTextStyle: 'light',
 		navigationBarBackgroundColor: '#fff',
-		navigationBarTitleText: 'WeChat',
-		navigationBarTextStyle: 'black'
+		navigationBarTitleText: '',
+		navigationBarTextStyle: 'black',
+    backgroundColor: "#F7F8FA"
 	},
 	requiredPrivateInfos: [
 		'getFuzzyLocation',
@@ -34,11 +51,8 @@ export default defineAppConfig({
 		// },
 	},
 	requiredBackgroundModes: ['audio', 'location'],
-	subPackages: [
-		{
-			root: 'pagesUser',
-			name: 'pagesUser',
-			pages: ['pages/system-settings/index']
-		}
-	]
+	animation: {
+		duration: 196, // 动画切换时间，单位毫秒
+		delay: 50 // 切换延迟时间，单位毫秒
+	}
 });

@@ -281,7 +281,7 @@ export const jumpCallback = ({ params = {} } = {}) => {
       jumpWebview({ url, query, webviewType });
       break;
     default:
-      Taro.switchTab({ url: TAB['circle'] });
+      Taro.switchTab({ url: TAB['home'] });
       break;
   }
   // 处理完回掉清空数据

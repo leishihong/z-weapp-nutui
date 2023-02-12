@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View } from '@tarojs/components';
 import { useSelector, useDispatch } from 'react-redux';
-
+import Taro from '@tarojs/taro';
 import { PageContainer } from 'components/index';
 import {
 	EmptyPage,
@@ -136,6 +136,9 @@ const Index = () => {
 		console.log(key, JSON.stringify(item));
 	};
 	storageCache('id');
+	useEffect(() => {
+    Taro.hideToast()
+	}, []);
 	const onClickIndex = (key: string) => {
 		console.log(key);
 	};

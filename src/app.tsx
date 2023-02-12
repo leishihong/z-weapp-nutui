@@ -9,7 +9,6 @@ import store from 'store/index';
 import { getSystemInfo } from 'utils/getSystemInfo';
 
 import './app.scss';
-
 const App: FC<PropsWithChildren> = (props) => {
 	const dispatch = store.dispatch;
 
@@ -40,10 +39,10 @@ const App: FC<PropsWithChildren> = (props) => {
 			dispatch({ type: 'globalsState/getNetworkType' });
 		});
 	}, []);
+
 	return (
 		<Provider store={store}>
-			<StartLaunch children={props.children} />
-			{/* {props.children} */}
+			{props.children}
 		</Provider>
 	);
 };
