@@ -1,0 +1,58 @@
+$card-bg-color: var(--u-card-bg-color, transparent);
+$card-margin: var(--u-card-margin, 0);
+$card-title-color: var(--u-card-title-color, #333333);
+$card-title-font-size: var(--u-card-title-font-size, 32px);
+$card-title-font-weight: var(--u-card-title-font-weight, 600);
+$card-title-line-height: var(--u-card-title-line-height, 38px);
+$card-header-padding: var(--u-card-header-padding, 16px 24px);
+$card-body-padding: var(--u-card-body-padding, 0);
+
+.u-card {
+	background: $card-bg-color;
+	margin: $card-margin;
+	&__header {
+		padding: $card-header-padding;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&__wrapper {
+			flex: 1;
+			display: flex;
+			padding-right: 16px;
+			overflow: hidden;
+		}
+		&-left,
+		&-right {
+			display: flex;
+			&-icon {
+				width: 36px;
+				min-width: 36px;
+				height: 36px;
+			}
+		}
+		&-left {
+			margin-right: 12px;
+		}
+		&-right {
+			margin-left: 12px;
+		}
+		&-title {
+			font-size: $card-title-font-size;
+			font-family: PingFang SC-Semibold, PingFang SC;
+			font-weight: $card-title-font-weight;
+			color: $card-title-color;
+			line-height: $card-title-line-height;
+		}
+		&-extra {
+			display: flex;
+			&-icon {
+				width: 64px;
+				min-width: 64px;
+				height: 40px;
+			}
+		}
+	}
+	&__body {
+		padding: $card-body-padding;
+	}
+}

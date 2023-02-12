@@ -1,10 +1,22 @@
 page {
 	--u-indicator-dot-active-color: red;
-  min-height: 100%;
 }
-.nutui-react {
+
+.home-page {
 	min-height: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
-  overflow: hidden;
+	&__top {
+		height: 604px;
+		background: linear-gradient(
+			180deg,
+			#bfb5ff 0%,
+			rgba(217, 217, 217, 0) 100%
+		);
+	}
+	&__body {
+		margin-top: -32px;
+		min-height: 100%;
+		background: #f7f8fa;
+		border-radius: 32px 32px 0 0;
+		padding: 32px;
+	}
 }

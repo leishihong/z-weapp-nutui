@@ -29,6 +29,13 @@ $custom-tab-bar-icon: var(--u-custom-tab-bar-icon, #999999);
 		--animate-duration: 1s;
 		--animate-delay: 0s;
 
+		&.custom-item-view {
+			animation-name: ripple;
+			animation-duration: 0.5s;
+			animation-fill-mode: both;
+			animation-timing-function: ease-out;
+			animation-iteration-count: infinite;
+		}
 		&-icon {
 			width: 52px;
 			height: 52px;
@@ -65,6 +72,14 @@ $custom-tab-bar-icon: var(--u-custom-tab-bar-icon, #999999);
 		}
 		&.custom-item-view {
 			display: none;
+		}
+	}
+	@keyframes ripple {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
 		}
 	}
 }

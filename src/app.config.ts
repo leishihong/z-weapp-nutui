@@ -31,10 +31,11 @@ export default defineAppConfig({
 	},
 	window: {
 		backgroundTextStyle: 'light',
-		navigationBarBackgroundColor: '#fff',
+		navigationBarBackgroundColor: '#FFFFFF',
 		navigationBarTitleText: '',
 		navigationBarTextStyle: 'black',
-    backgroundColor: "#F7F8FA"
+		backgroundColor: '#F7F8FA',
+		homeButton: true
 	},
 	requiredPrivateInfos: [
 		'getFuzzyLocation',

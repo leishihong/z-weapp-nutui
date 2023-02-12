@@ -63,7 +63,8 @@ const CustomTabBar: FC = () => {
 							className={cls(
 								cx['tab-bar-item'],
 								{
-									[cx['tab-bar-item--active']]: selectedIndex === index
+									[cx['tab-bar-item--active']]:
+										selectedIndex === index && item.divClass
 								},
 								cx[item.divClass]
 							)}

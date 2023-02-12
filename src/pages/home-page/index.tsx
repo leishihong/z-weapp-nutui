@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { View } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
 import { useSelector, useDispatch } from 'react-redux';
 import Taro from '@tarojs/taro';
-import { PageContainer } from 'components/index';
+import { PageContainer, PKVoting,AdvertiseArea } from 'components/index';
 import {
 	EmptyPage,
 	UPopup,
@@ -10,14 +10,19 @@ import {
 	UNoticeBar,
 	UElevator,
 	UEditor,
-	UButton
+	UButton,
+	UCard
 } from 'taste-ui/index';
 
 import { storageCache } from 'utils/storageCache';
+import { UWithNaming } from 'utils/bem';
 
 import cx from './index.module.scss';
 
+const bme = UWithNaming({ n: 'home-' });
+
 const Index = () => {
+	const b = bme('page');
 	const dataList = [
 		{
 			title: 'A',
@@ -137,7 +142,7 @@ const Index = () => {
 	};
 	storageCache('id');
 	useEffect(() => {
-    Taro.hideToast()
+		Taro.hideToast();
 	}, []);
 	const onClickIndex = (key: string) => {
 		console.log(key);
@@ -145,56 +150,34 @@ const Index = () => {
 	const play = (elm: HTMLVideoElement) => console.log('play', elm);
 	const pause = (elm: HTMLVideoElement) => console.log('pause', elm);
 	const playend = (elm: HTMLVideoElement) => console.log('playend', elm);
-	return (
-		<PageContainer>
-			<div className={cx['nutui-react']}>
-				{/* <Elevator
-				indexList={dataList}
-				height="400"
-				isSticky
-				onClickItem={(key: string, item: any) => onClickItem(key, item)}
-				onClickIndex={(key: string) => onClickIndex(key)}
-			/> */}
-				<UButton type="info" plain>
-					block
-				</UButton>
-				{/* <UVideo
-				source={{
-					src: 'https://storage.360buyimg.com/nutui/video/video_NutUI.mp4',
-					type: 'video/mp4'
-				}}
-				options={{
-					controls: true,
-					autoplay: true,
-					muted: true,
-					playsinline: true,
-					loop: true
-				}}
-				onPlayFuc={play}
-				onPauseFuc={pause}
-				onPlayend={playend}
-			/> */}
-				<UElevator
-					indexList={dataList}
-					height="400"
-					isSticky
-					onClickItem={(key: string, item: any) => onClickItem(key, item)}
-					onClickIndex={(key: string) => onClickIndex(key)}
-				/>
-				<UEditor r-if={false} editorId="test" content="kjkfjkejfkejfkejfk" />
-				<EmptyPage />
 
-				<UNoticeBar scrollable>
-					在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
-				</UNoticeBar>
-				<UNoticeBar scrollable={false}>
-					在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
-				</UNoticeBar>
-				<UIndicator block />
-				<UPopup visible={false} placement="bottom" rounded>
-					在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准
-				</UPopup>
-			</div>
+	return (
+		<PageContainer title="" isImmersive background="transparent">
+			<View className={cx[b('')]}>
+				<View className={cx[b('top')]}></View>
+				<View className={cx[b('body')]}>
+					<UCard title="热门活动">
+
+					</UCard>
+					<UCard title="热门活动" showMoreIcon />
+          <AdvertiseArea capsuleType="1" />
+					<PKVoting type="PK" />
+					<PKVoting type="VOTE" style={{ height: '436rpx' }} />
+          <UCard title="找活动" showMoreIcon >
+
+          </UCard>
+					<UElevator
+						indexList={dataList}
+						height="980"
+						isSticky
+						onClickItem={(key: string, item: any) => onClickItem(key, item)}
+						onClickIndex={(key: string) => onClickIndex(key)}
+					/>
+					<UEditor r-if={false} editorId="test" content="kjkfjkejfkejfkejfk" />
+					<EmptyPage />
+					<UIndicator block />
+				</View>
+			</View>
 		</PageContainer>
 	);
 };
