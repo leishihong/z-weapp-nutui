@@ -1,0 +1,29 @@
+.activity-status {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 88px;
+	height: 40px;
+	background: #aaaaaa;
+	box-shadow: 8px 12px 8px -6px rgba(11, 11, 27, 0.17);
+	border-radius: 8px 0px 24px 0px;
+	// padding: 8px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__text {
+		display: inline-block;
+		font-size: 20px;
+		font-family: PingFang SC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #f7f8fa;
+		line-height: 23px;
+	}
+}
+
+.activity-status__start {
+	background: rgba(0, 0, 0, 0.7);
+	.activity-status__text {
+		color: #ffffff;
+	}
+}
