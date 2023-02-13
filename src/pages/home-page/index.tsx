@@ -9,7 +9,7 @@ import {
 	ActivityCard,
 	CommunityCard
 } from 'components/index';
-import UTabs from 'components/Utabs';
+import UTabs from 'components/UTabs';
 import { storageCache } from 'utils/storageCache';
 import { UWithNaming } from 'utils/bem';
 

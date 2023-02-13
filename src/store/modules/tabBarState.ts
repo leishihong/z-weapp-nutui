@@ -29,8 +29,8 @@ export default {
 			},
 			{
 				text: 'MO卡',
-				pageName: 'community',
-				pagePath: '/pages/community/index',
+				pageName: 'moka',
+				pagePath: '/pages/moka/index',
 				iconPath: '/assets/tab-bar/moka-icon.png',
 				selectedIconPath: '/assets/tab-bar/moka-selected-icon.png'
 			},

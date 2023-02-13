@@ -24,7 +24,7 @@ const tabBarConfig = {
     },
     {
       text: 'Moka',
-      pagePath: 'pages/community/index',
+      pagePath: 'pages/moka/index',
       iconPath: 'assets/tab-bar/moka-icon.png',
       selectedIconPath: 'assets/tab-bar/moka-selected-icon.png'
     },

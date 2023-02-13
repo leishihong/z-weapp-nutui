@@ -4,8 +4,8 @@ export default defineAppConfig({
 	pages: [
 		'pages/home-page/index',
 		'pages/activity/index',
-		'pages/community/index',
 		'pages/mine/index',
+    'pages/moka/index',
 		'pages/land/index'
 	],
 	tabBar: tabBarConfig,

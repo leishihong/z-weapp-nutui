@@ -12,6 +12,6 @@ export {
 	PKVoting,
 	AdvertiseArea,
 	ActivityCard,
-  ActivityStatus,
-  CommunityCard
+	ActivityStatus,
+	CommunityCard
 };
