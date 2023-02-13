@@ -9,7 +9,10 @@ import {
 	ActivityCard,
 	CommunityCard
 } from 'components/index';
+
 import UTabs from 'components/UTabs';
+import KnowledgeCard from './includes/KnowledgeCard'
+
 import { storageCache } from 'utils/storageCache';
 import { UWithNaming } from 'utils/bem';
 
@@ -37,6 +40,7 @@ const HomePage = () => {
 					<AdvertiseArea capsuleType="1" />
 					<PKVoting type="PK" />
 					<PKVoting type="VOTE" style={{ height: '436rpx' }} />
+          <KnowledgeCard src="" title="【ozzon上新】花鸟龙月生成色怎么搭配" />
 					<CommunityCard
 						title="社团"
 						dataSource={[

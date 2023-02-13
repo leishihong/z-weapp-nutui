@@ -7,7 +7,7 @@ import {
 	useEffect,
 	useCallback
 } from 'react';
-import { View, Block } from '@tarojs/components';
+import { View, Block, Image } from '@tarojs/components';
 import { useSelector, useDispatch } from 'react-redux';
 import Taro, {
 	showModal,
@@ -18,13 +18,17 @@ import Taro, {
 	useReady,
 	useShareAppMessage,
 	ShareAppMessageObject,
-	useDidHide
+	useDidHide,
+	nextTick
 } from '@tarojs/taro';
+import cls from 'classnames';
 
 import { TaroNavigationBar } from 'components/index';
 import { UPopup } from 'taste-ui/index';
 import { NavigationBarProps } from 'components/TaroNavigationBar/type';
 import { TXReverseGeocoder } from 'utils/TX-map';
+
+import cx from './index.module.scss';
 
 interface IProps extends NavigationBarProps {
 	title: string;
@@ -81,10 +85,7 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 		}
 	};
 	useDidHide(() => {
-		dispatch({
-			type: 'tabBarState/setState',
-			payload: { showTabBar: false, popupVisible: false }
-		});
+		handleClosePopup();
 	});
 	usePageScroll((payload) => {
 		const { scrollTop } = payload;
@@ -102,6 +103,13 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 		}
 	});
 
+	const handleClosePopup = useCallback(() => {
+		dispatch({
+			type: 'tabBarState/setState',
+			payload: { popupVisible: false, showTabBar: false }
+		});
+	}, []);
+
 	return (
 		<Block>
 			<TaroNavigationBar
@@ -110,8 +118,56 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 				r-if={isCustomNavBar}
 			/>
 			{children}
-			<UPopup visible={tabBarState.popupVisible} placement="bottom" rounded>
-				<View>测试</View>
+			<UPopup
+				visible={tabBarState.popupVisible}
+				placement="bottom"
+				rounded
+				maskClosable
+				showToolbar={false}
+				footer={null}
+				onCancel={handleClosePopup}
+			>
+				<View className={cx['publish']}>
+					<View className={cx['publish-body']}>
+						<View className={cx['publish-grid']}>
+							<View className={cx['publish-grid-avatar']}>
+								<Image
+									src="https://s1.ax1x.com/2023/02/13/pSo8yOs.png"
+									lazyLoad
+									mode="aspectFill"
+								/>
+							</View>
+							<View className={cx['publish-grid-desc']}>
+								<View className={cx['publish-grid--desc-title']}>创建社团</View>
+								<View className={cx['publish-grid--desc-subtitle']}>
+									仅限个人参加
+								</View>
+							</View>
+						</View>
+						<View className={cx['publish-grid']}>
+							<View className={cx['publish-grid-avatar']}>
+								<Image
+									src="https://s1.ax1x.com/2023/02/13/pSo8syj.png"
+									lazyLoad
+									mode="aspectFill"
+								/>
+							</View>
+							<View className={cx['publish-grid-desc']}>
+								<View className={cx['publish-grid--desc-title']}>发布活动</View>
+								<View className={cx['publish-grid--desc-subtitle']}>
+									分享我的趣味生活
+								</View>
+							</View>
+						</View>
+					</View>
+					<View className={cx['publish-close']} onClick={handleClosePopup}>
+						<Image
+							src="https://s1.ax1x.com/2023/02/13/pSo8cmn.png"
+							lazyLoad
+							mode="aspectFill"
+						/>
+					</View>
+				</View>
 			</UPopup>
 		</Block>
 	);

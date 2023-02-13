@@ -17,7 +17,7 @@ const tabBarConfig = {
       selectedIconPath: 'assets/tab-bar/activity-selected-icon.png'
     },
     {
-      text: 'Moka',
+      text: '发布',
       pagePath: 'pages/land/index',
       iconPath: 'assets/tab-bar/publish-icon.png',
       selectedIconPath: 'assets/tab-bar/publish-icon.png'
