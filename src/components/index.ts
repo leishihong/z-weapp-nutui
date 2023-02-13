@@ -4,6 +4,7 @@ import PKVoting from './PKVoting';
 import AdvertiseArea from './AdvertiseArea';
 import ActivityCard from './ActivityCard';
 import ActivityStatus from './ActivityStatus';
+import CommunityCard from './CommunityCard';
 
 export {
 	PageContainer,
@@ -11,5 +12,6 @@ export {
 	PKVoting,
 	AdvertiseArea,
 	ActivityCard,
-  ActivityStatus
+  ActivityStatus,
+  CommunityCard
 };

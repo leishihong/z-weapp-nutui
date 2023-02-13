@@ -1,18 +1,16 @@
-.u-activity {
+.u-community {
 	margin-bottom: 32px;
 	--u-card-header-padding: 0;
 	&__body {
-		// padding-top: 24px;
-	}
-	&__list {
 		margin-top: 24px;
 		background: #ffffff;
+	}
+	&__list {
 		border-radius: 8px;
 		padding: 24px 24px 0;
-		margin-bottom: 24px;
 		&:last-child {
 			margin-bottom: 0;
-			&.u-activity__list-item {
+			.u-community__list-body {
 				border-bottom: none;
 			}
 		}
@@ -23,9 +21,9 @@
 		}
 		&-cover {
 			position: relative;
-			width: 176px;
-			min-width: 176px;
-			height: 236px;
+			width: 178px;
+			min-width: 178px;
+			height: 178px;
 			border-radius: 8px;
 			margin-right: 24px;
 			&-image {
@@ -39,7 +37,7 @@
 			flex: 1;
 			display: flex;
 			flex-direction: column;
-			overflow: hidden;
+      overflow: hidden;
 
 			&-title {
 				font-size: 28px;
@@ -73,6 +71,10 @@
 					font-weight: 400;
 					color: #999999;
 					line-height: 28px;
+					flex: 1;
+				}
+				&-btn {
+					margin-left: 12px;
 				}
 			}
 			&-wrapper {

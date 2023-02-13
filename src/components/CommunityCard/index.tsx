@@ -5,7 +5,6 @@ import { isEmpty, map } from 'lodash';
 import cls from 'classnames';
 
 import { UCard, UButton, Avatar } from 'taste-ui/index';
-import ActivityStatus from 'components/ActivityStatus';
 
 import bem from 'utils/bem';
 import { storageCache } from 'utils/storageCache';
@@ -32,14 +31,13 @@ const defaultProps = {
 	showMoreIcon: false
 } as IProps;
 
-const b = bem('activity');
+const b = bem('community');
 
-export const ActivityListItem: FC<any> = ({ curItem }) => {
+export const CommunityListItem: FC<any> = ({ curItem }) => {
 	return (
 		<View className={cls(cx[b('list')])}>
 			<View className={cls(cx[b('list-body')])}>
 				<View className={cls(cx[b('list-cover')])}>
-					<ActivityStatus activityStatus="1" />
 					<Image
 						src="https://s1.ax1x.com/2023/02/12/pSIKWUe.png"
 						lazyLoad
@@ -52,56 +50,42 @@ export const ActivityListItem: FC<any> = ({ curItem }) => {
 						{curItem.title}
 					</View>
 					<View className={cls(cx[b('list-desc-wrapper')])}>
-						<View className={cls(cx[b('list-desc-time')])}>
-							2023.02.07 - 2023.02.09
-						</View>
-						<View className={cls(cx[b('list-desc-address'),'ellipsis'])}>北京·鼓西33</View>
+						<View className={cls(cx[b('list-desc-address')],'ellipsis')}>北京·鼓西33</View>
 						<View className={cls(cx[b('list-desc-sponsor')])}>
 							<View className={cls(cx[b('list-desc-sponsor-avatar')])}></View>
 							<View
 								className={cls(cx[b('list-desc-sponsor-title')], 'ellipsis')}
 							>
-								PHC大力顽俱乐部
+								PHC大力顽俱乐部PHC大力顽俱乐部PHC大力顽俱乐部PHC大力顽俱乐部PHC大力顽俱乐部
 							</View>
+							<UButton
+								className={cls(cx[b('list-desc-sponsor-btn')])}
+								size="small"
+								type="primary"
+							>
+								报名
+							</UButton>
 						</View>
 					</View>
 				</View>
-			</View>
-			<View className={cls(cx[b('list-extra')])}>
-				<View className={cls(cx[b('list-extra-icon')])}>
-					{/* <Avatar.Group limit={4} total={30}>
-						<Avatar src="https://joeschmoe.io/api/v1/random" />
-						<Avatar src="https://joeschmoe.io/api/v1/random" />
-						<Avatar src="https://joeschmoe.io/api/v1/random" />
-						<Avatar src="https://joeschmoe.io/api/v1/random" />
-						<Avatar src="https://joeschmoe.io/api/v1/random" />
-						<Avatar src="https://joeschmoe.io/api/v1/random" />
-					</Avatar.Group> */}
-					<View className={cls(cx[b('list-extra-desc')])}>210人已报名</View>
-				</View>
-				<UButton
-					className={cls(cx[b('list-extra-btn')])}
-					size="small"
-					type="primary"
-				>
-					报名
-				</UButton>
 			</View>
 		</View>
 	);
 };
 
-export const ActivityList: FC<Partial<{ dataSource: any[] }>> = (props) => {
+export const CommunityList: FC<
+	Partial<{ dataSource: any[]; isCommunity: boolean }>
+> = (props) => {
 	const { dataSource = [] } = props;
 
 	const handleDetail = useCallback(
 		async (curItem: any, index: number = 0) => {
 			const AUTH_TOKEN = await storageCache('AUTH-TOKEN');
 			if (AUTH_TOKEN) {
-				Taro.navigateTo({ url: URL['activity-square'] });
+				Taro.navigateTo({ url: URL['community-detail'] });
 			} else {
 				jumpSetCallback({
-					url: URL['activity-square'],
+					url: URL['community-square'],
 					type: 'page',
 					webviewType: 'redirect'
 				});
@@ -115,14 +99,14 @@ export const ActivityList: FC<Partial<{ dataSource: any[] }>> = (props) => {
 		<Block>
 			{Array.isArray(dataSource) ? (
 				map(dataSource, (item, index) => (
-					<ActivityListItem
+					<CommunityListItem
 						curItem={item}
 						key={index}
 						onClick={() => handleDetail(item, index)}
 					/>
 				))
 			) : (
-				<ActivityListItem
+				<CommunityListItem
 					curItem={dataSource}
 					onClick={() => handleDetail(dataSource, 0)}
 				/>
@@ -131,7 +115,7 @@ export const ActivityList: FC<Partial<{ dataSource: any[] }>> = (props) => {
 	);
 };
 
-const ActivityCard: FC<Partial<IProps>> = (props) => {
+const CommunityCard: FC<Partial<IProps>> = (props) => {
 	const {
 		title,
 		style,
@@ -156,12 +140,12 @@ const ActivityCard: FC<Partial<IProps>> = (props) => {
 		>
 			<View className={cls(cx[b('body')])}>
 				{children}
-				<ActivityList dataSource={dataSource} {...resetProps} />
+				<CommunityList dataSource={dataSource} {...resetProps} />
 			</View>
 		</UCard>
 	);
 };
 
-ActivityCard.defaultProps = defaultProps;
+CommunityCard.defaultProps = defaultProps;
 
-export default memo(ActivityCard);
+export default memo(CommunityCard);

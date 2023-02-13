@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Image } from '@tarojs/components';
 import { useSelector, useDispatch } from 'react-redux';
 import Taro from '@tarojs/taro';
@@ -6,19 +6,10 @@ import {
 	PageContainer,
 	PKVoting,
 	AdvertiseArea,
-	ActivityCard
+	ActivityCard,
+	CommunityCard
 } from 'components/index';
-import {
-	EmptyPage,
-	UPopup,
-	UIndicator,
-	UNoticeBar,
-	UElevator,
-	UEditor,
-	UButton,
-	UCard
-} from 'taste-ui/index';
-
+import UTabs from 'components/Utabs';
 import { storageCache } from 'utils/storageCache';
 import { UWithNaming } from 'utils/bem';
 
@@ -27,8 +18,12 @@ import cx from './index.module.scss';
 const bme = UWithNaming({ n: 'home-' });
 const b = bme('page');
 
-const Index = () => {
-
+const HomePage = () => {
+	const [tabActive, setTabActive] = useState<string | number>('');
+	const handleTabClick = (tabItem) => {
+		console.log(tabItem, 'tabItem');
+		setTabActive(tabItem.id);
+	};
 
 	return (
 		<PageContainer title="" isImmersive isCustomNavBar selectedIndex={0}>
@@ -42,11 +37,18 @@ const Index = () => {
 					<AdvertiseArea capsuleType="1" />
 					<PKVoting type="PK" />
 					<PKVoting type="VOTE" style={{ height: '436rpx' }} />
-					<UCard title="社团" showMoreIcon></UCard>
+					<CommunityCard
+						title="社团"
+						dataSource={[
+							{ title: '活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称...' },
+							{ title: '活动名称占位最多显示两行字符活动名称...' }
+						]}
+						showMoreIcon
+					/>
 					<ActivityCard
 						title="找活动"
 						dataSource={[
-							{ title: '活动名称占位最多显示两行字符活动名称...' },
+							{ title: '活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称活动名称占位最多显示两行字符活动名称...' },
 							{ title: '活动名称占位最多显示两行字符活动名称...' },
 							{ title: '活动名称占位最多显示两行字符活动名称...' },
 							{ title: '活动名称占位最多显示两行字符活动名称...' },
@@ -55,11 +57,24 @@ const Index = () => {
 							{ title: '活动名称占位最多显示两行字符活动名称...' }
 						]}
 						showMoreIcon
-					></ActivityCard>
+					>
+						<UTabs
+							dataSource={[
+								{ id: '', title: '全部' },
+								{ id: '1', title: '漫展' },
+								{ id: '2', title: '国风' },
+								{ id: '3', title: '新鲜' },
+							]}
+							value={tabActive}
+							valueKey="id"
+							valueLabel="title"
+							onClick={handleTabClick}
+						/>
+					</ActivityCard>
 				</View>
 			</View>
 		</PageContainer>
 	);
 };
 
-export default Index;
+export default HomePage;
