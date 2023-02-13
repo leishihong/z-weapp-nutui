@@ -25,13 +25,13 @@ import { UWithNaming } from 'utils/bem';
 import cx from './index.module.scss';
 
 const bme = UWithNaming({ n: 'home-' });
+const b = bme('page');
 
 const Index = () => {
-	const b = bme('page');
 
 
 	return (
-		<PageContainer title="" isImmersive isCustomNavBar>
+		<PageContainer title="" isImmersive isCustomNavBar selectedIndex={0}>
 			<View className={cx[b('')]}>
 				<View className={cx[b('top')]}></View>
 				<View className={cx[b('body')]}>

@@ -3,11 +3,13 @@
   "projectname": "z-weapp-nutui",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": false,
+    "bigPackageSizeSupport": true
   },
   "permission": {
     "scope.useFuzzyLocation": {
       "desc": "基于用户地理位置获得附近社团，同城活动推荐"
     }
-  }
+  },
+  "libVersion": "2.30.0"
 }

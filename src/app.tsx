@@ -20,12 +20,12 @@ const App: FC<PropsWithChildren> = (props) => {
 		// dispatch({ type: 'tabBarState/setState', payload: { selectedIndex: tabBarState.selectedIndex } });
 		handleUpdate();
 	});
-	Taro.onPageNotFound((options) => {
-		console.log('on page not found', options);
-		Taro.redirectTo({
-			url: URL['404']
-		});
-	});
+	// Taro.onPageNotFound((options) => {
+	// 	console.log('on page not found', options);
+	// 	Taro.redirectTo({
+	// 		url: URL['404']
+	// 	});
+	// });
 	useEffect(() => {
 		dispatch({ type: 'globalsState/getAccountInfoSync' });
 		dispatch({

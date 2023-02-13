@@ -13,14 +13,20 @@ const tabBarConfig = {
     {
       text: '活动',
       pagePath: 'pages/activity/index',
-      iconPath: 'assets/tab-bar/home-icon.png',
-      selectedIconPath: 'assets/tab-bar/home-selected-icon.png'
+      iconPath: 'assets/tab-bar/activity-icon.png',
+      selectedIconPath: 'assets/tab-bar/activity-selected-icon.png'
     },
     {
-      text: '社团',
+      text: 'Moka',
+      pagePath: 'pages/land/index',
+      iconPath: 'assets/tab-bar/publish-icon.png',
+      selectedIconPath: 'assets/tab-bar/publish-icon.png'
+    },
+    {
+      text: 'Moka',
       pagePath: 'pages/community/index',
-      iconPath: 'assets/tab-bar/home-icon.png',
-      selectedIconPath: 'assets/tab-bar/home-selected-icon.png'
+      iconPath: 'assets/tab-bar/moka-icon.png',
+      selectedIconPath: 'assets/tab-bar/moka-selected-icon.png'
     },
     {
       text: '我的',

@@ -1,27 +1,14 @@
+page {
+	padding-bottom: calc(100px + constant(safe-area-inset-bottom));
+	padding-bottom: calc(100px + env(safe-area-inset-bottom));
+}
 
-
-.nutui-react-demo {
-  height: 100vh;
-  display: flex;
-flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.index {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24rpx;
-  margin-bottom: 30px;
-}
-.title{
-  display: block;
-  margin: 20px 0;
-  font-weight: 600;
-}
-.btn{
-  display: block;
-  width: 200px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+.activity-page {
+  padding-bottom: 32px;
+	&__body {
+		min-height: 100%;
+		background: #f7f8fa;
+		padding-left: 32px;
+		padding-right: 32px;
+	}
 }

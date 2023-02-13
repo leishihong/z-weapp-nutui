@@ -17,13 +17,6 @@ const CustomTabBar: FC = () => {
 	} = useSelector(({ tabBarState }) => tabBarState);
 	const dispatch = useDispatch();
 
-	useDidHide(() => {
-		dispatch({
-			type: 'tabBarState/setState',
-			payload: { showTabBar: false, popupVisible: false }
-		});
-	});
-
 	const onSwitchTab = useCallback(
 		(item, index: number) => {
 			Taro.vibrateShort({ type: 'medium' });

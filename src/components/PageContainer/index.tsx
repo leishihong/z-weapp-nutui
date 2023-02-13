@@ -17,34 +17,74 @@ import Taro, {
 	useTabItemTap,
 	useReady,
 	useShareAppMessage,
-	ShareAppMessageObject
+	ShareAppMessageObject,
+	useDidHide
 } from '@tarojs/taro';
 
 import { TaroNavigationBar } from 'components/index';
 import { UPopup } from 'taste-ui/index';
 import { NavigationBarProps } from 'components/TaroNavigationBar/type';
+import { TXReverseGeocoder } from 'utils/TX-map';
+
 interface IProps extends NavigationBarProps {
 	title: string;
 	children: ReactNode;
 	isCustomNavBar: boolean;
+	selectedIndex: number;
 }
 
 const defaultProps = {
-	isCustomNavBar: false
+	isCustomNavBar: false,
+	selectedIndex: 0
 } as IProps;
 
 const PageContainer: FC<Partial<IProps>> = (props) => {
-	const { children, title, isImmersive, isCustomNavBar, ...resetProps } = props;
+	const {
+		children,
+		title,
+		isImmersive,
+		isCustomNavBar,
+		selectedIndex,
+		...resetProps
+	} = props;
 
-	const { popupVisible } = useSelector(({ tabBarState }) => tabBarState);
-	const { system } = useSelector(({ globalsState }) => globalsState);
 	const dispatch = useDispatch();
+	const tabBarState = useSelector(({ tabBarState }) => tabBarState);
+	const { system } = useSelector(({ globalsState }) => globalsState);
 	const { navBarHeight, navBarExtendHeight } = useMemo(() => system, []);
 
 	const [navBarInfo, setNavBarInfo] = useState<any>({
 		isImmersive,
 		background: `linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%)`,
 		title
+	});
+	useEffect(() => {
+		dispatch({ type: 'tabBarState/setState', payload: { selectedIndex } });
+		getFuzzyLocation();
+	}, []);
+
+	const getFuzzyLocation = async () => {
+		try {
+			const locationRes: Taro.getFuzzyLocation.SuccessCallbackResult =
+				await Taro.getFuzzyLocation({ type: 'gcj02' });
+			if (locationRes?.errMsg.indexOf('ok') !== -1) {
+				const { status, result }: any = await TXReverseGeocoder(locationRes);
+				if (status === 0) {
+					console.log(result, 'result');
+				}
+			}
+		} catch (error: any) {
+			if (error?.errMsg.indexOf('deny') !== -1) {
+				console.log('用户拒绝授权定位');
+			}
+			console.log(error, '---');
+		}
+	};
+	useDidHide(() => {
+		dispatch({
+			type: 'tabBarState/setState',
+			payload: { showTabBar: false, popupVisible: false }
+		});
 	});
 	usePageScroll((payload) => {
 		const { scrollTop } = payload;
@@ -70,7 +110,7 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 				r-if={isCustomNavBar}
 			/>
 			{children}
-			<UPopup visible={popupVisible} placement="bottom" rounded>
+			<UPopup visible={tabBarState.popupVisible} placement="bottom" rounded>
 				<View>测试</View>
 			</UPopup>
 		</Block>

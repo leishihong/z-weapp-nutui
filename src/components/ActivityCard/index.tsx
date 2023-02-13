@@ -87,6 +87,21 @@ export const ActivityListItem: FC<any> = ({ curItem }) => {
 	);
 };
 
+export const ActivityList: FC<{ dataSource: any[] }> = (props) => {
+	const { dataSource = [] } = props;
+	return (
+		<Block>
+			{Array.isArray(dataSource) ? (
+				map(dataSource, (item, index) => (
+					<ActivityListItem curItem={item} key={index} />
+				))
+			) : (
+				<ActivityListItem curItem={dataSource} />
+			)}
+		</Block>
+	);
+};
+
 const ActivityCard: FC<Partial<IProps>> = (props) => {
 	const { title, style, className, dataSource, children, showMoreIcon } = {
 		...defaultProps,
@@ -94,6 +109,7 @@ const ActivityCard: FC<Partial<IProps>> = (props) => {
 	};
 
 	if (isEmpty(dataSource)) return <Block />;
+
 	return (
 		<UCard
 			className={cls(cx[b()], className)}
@@ -103,13 +119,7 @@ const ActivityCard: FC<Partial<IProps>> = (props) => {
 		>
 			<View className={cls(cx[b('body')])}>
 				{children}
-				{Array.isArray(dataSource) ? (
-					map(dataSource, (item, index) => (
-						<ActivityListItem curItem={item} key={index} />
-					))
-				) : (
-					<ActivityListItem curItem={dataSource} />
-				)}
+				<ActivityList dataSource={dataSource} />
 			</View>
 		</UCard>
 	);

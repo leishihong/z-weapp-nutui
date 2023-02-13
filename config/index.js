@@ -77,6 +77,9 @@ const config = {
 		//     },
 		//   })
 		// },
+    compile: {
+      exclude: ['/libs/qqmap-wx-jssdk.js'] // 解决编译压缩过的 js 文件出错的问题
+    },
 		postcss: {
 			pxtransform: {
 				enable: true,
