@@ -89,7 +89,6 @@
     "@tarojs/cli": "3.6.0",
     "@tarojs/mini-runner": "3.6.0",
     "@tarojs/webpack-runner": "3.6.0",
-    "@types/node": "^18.13.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-router-dom": "^5.1.7",
