@@ -13,7 +13,7 @@ export default {
 				selectedIconPath: '/assets/tab-bar/home-selected-icon.png'
 			},
 			{
-				text: '活动',
+				text: '找活动',
 				pageName: 'activity',
 				pagePath: '/pages/activity/index',
 				iconPath: '/assets/tab-bar/activity-icon.png',
