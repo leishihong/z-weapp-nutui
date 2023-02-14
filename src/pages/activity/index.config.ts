@@ -1,5 +1,5 @@
 export default definePageConfig({
-	navigationBarTitleText: '活动',
+	navigationBarTitleText: '找活动',
 	enableShareAppMessage: true,
 	enableShareTimeline: true
 });

@@ -217,26 +217,12 @@ const SystemSettings: FC = () => {
 			<View className={cx['system-settings']}>
 				<View className={cx['cell-group']}>
 					<UCell
-						title="资料修改"
-						onClickPress={() => handleClick('modify-info')}
-					/>
-				</View>
-				<View className={cx['cell-group']}>
-					<UCell
 						title="联系客服"
 						onClickPress={() => handleCustomClick('email')}
 					/>
 					<UCell
 						title="关注公众号"
 						onClickPress={() => handleCustomClick('qrcode')}
-					/>
-					<UCell
-						title="隐私政策"
-						onClickPress={() => handleGoWebview('privacyPolicy', false)}
-					/>
-					<UCell
-						title="用户协议"
-						onClickPress={() => handleGoWebview('userAgreement', false)}
 					/>
 					<UCell
 						title="清除缓存"

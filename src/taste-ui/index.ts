@@ -16,6 +16,7 @@ import UEditor from './UEditor';
 import UTaroVideo from './UTaroVideo';
 import UButton from './UButton';
 import UCard from './UCard';
+import UTabs from './UTabs';
 
 export {
 	EmptyPage,
@@ -35,5 +36,6 @@ export {
 	UEditor,
 	UTaroVideo,
 	UButton,
-  UCard
+  UCard,
+  UTabs
 };

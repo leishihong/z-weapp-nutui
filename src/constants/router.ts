@@ -19,7 +19,7 @@ export const URL: { [key: string]: string } = {
  */
 export const TAB = {
 	home: '/pages/home-page/index',
-	community: '/pages/community/index',
+	moka: '/pages/moka/index',
 	activity: '/pages/activity/index',
 	mine: '/pages/mine/index'
 };

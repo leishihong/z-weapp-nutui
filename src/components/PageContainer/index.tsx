@@ -34,11 +34,13 @@ interface IProps extends NavigationBarProps {
 	title: string;
 	children: ReactNode;
 	isCustomNavBar: boolean;
+	showNavBar: boolean;
 	selectedIndex: number;
 }
 
 const defaultProps = {
 	isCustomNavBar: false,
+	showNavBar: false,
 	selectedIndex: 0
 } as IProps;
 
@@ -48,6 +50,7 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 		title,
 		isImmersive,
 		isCustomNavBar,
+		showNavBar,
 		selectedIndex,
 		...resetProps
 	} = props;
@@ -90,7 +93,7 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 	usePageScroll((payload) => {
 		const { scrollTop } = payload;
 		let navOp = scrollTop / (navBarHeight + navBarExtendHeight);
-		if (isCustomNavBar) {
+		if (isCustomNavBar && showNavBar) {
 			setNavBarInfo((preState) =>
 				Object.assign({}, preState, {
 					background:
@@ -115,7 +118,7 @@ const PageContainer: FC<Partial<IProps>> = (props) => {
 			<TaroNavigationBar
 				{...resetProps}
 				{...navBarInfo}
-				r-if={isCustomNavBar}
+				r-if={isCustomNavBar && showNavBar}
 			/>
 			{children}
 			<UPopup

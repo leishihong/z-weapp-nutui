@@ -22,6 +22,7 @@ export interface ICardProps {
 	children: string | ReactNode;
 	bodyStyle: CSSProperties;
 	showMoreIcon: boolean;
+  showCardHeader:boolean;
 	style: CSSProperties | any;
 	headerStyle: CSSProperties;
 	ellipsis: boolean;
@@ -36,6 +37,7 @@ const defaultProps = {
 	children: '',
 	leftIcon: '',
 	rightIcon: '',
+  showCardHeader:true,
 	showMoreIcon: false,
 	ellipsis: true,
 	extra: IconArrowMore,
@@ -49,6 +51,7 @@ const UCard: FC<Partial<ICardProps>> = (props) => {
 	const {
 		className,
 		showMoreIcon,
+    showCardHeader,
 		title,
 		leftIcon,
 		children,
@@ -74,7 +77,7 @@ const UCard: FC<Partial<ICardProps>> = (props) => {
 	}, []);
 	return (
 		<View className={cls(cx[b()], className)} style={style}>
-			<View className={cx[b('header')]} style={headerStyle}>
+			<View className={cx[b('header')]} style={headerStyle} r-if={showCardHeader}>
 				<View className={cx[b('header__wrapper')]}>
 					<View className={cx[b('header-left')]} r-if={leftIcon}>
 						{isValidElement(leftIcon) ? (
@@ -111,7 +114,7 @@ const UCard: FC<Partial<ICardProps>> = (props) => {
 					</View>
 				</View>
 				<View className={cx[b('header-extra')]} onClick={handleExtra}>
-					{isValidElement(extra) && showMoreIcon && extra}
+					{isValidElement(extra) && extra}
 					<Image
 						src={extra}
 						r-if={!isValidElement(extra) && showMoreIcon}

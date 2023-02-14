@@ -20,4 +20,17 @@ page {
 		border-radius: 32px 32px 0 0;
 		padding: 32px;
 	}
+	&__knowledge {
+		--u-card-bg-color: #ffffff;
+		--u-card-body-padding: 0;
+		margin-bottom: 32px;
+		&-title {
+			font-size: 28px;
+			font-family: PingFang SC-Medium, PingFang SC;
+			font-weight: 500;
+			color: #000000;
+			line-height: 33px;
+			padding: 24px 32px;
+		}
+	}
 }

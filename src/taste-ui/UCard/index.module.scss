@@ -54,5 +54,6 @@ $card-body-padding: var(--u-card-body-padding, 0);
 	}
 	&__body {
 		padding: $card-body-padding;
+    width: 100%;
 	}
 }
