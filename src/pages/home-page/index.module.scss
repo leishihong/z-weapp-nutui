@@ -1,36 +1,59 @@
 page {
-	padding-bottom: calc(100px + constant(safe-area-inset-bottom));
-	padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  padding-bottom: calc(100px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(100px + env(safe-area-inset-bottom));
 }
 
 .home-page {
-	min-height: 100%;
-	&__top {
-		height: 604px;
-		background: linear-gradient(
-			180deg,
-			#bfb5ff 0%,
-			rgba(217, 217, 217, 0) 100%
-		);
-	}
-	&__body {
-		margin-top: -32px;
-		min-height: 100%;
-		background: #f7f8fa;
-		border-radius: 32px 32px 0 0;
-		padding: 32px;
-	}
-	&__knowledge {
-		--u-card-bg-color: #ffffff;
-		--u-card-body-padding: 0;
-		margin-bottom: 32px;
-		&-title {
-			font-size: 28px;
-			font-family: PingFang SC-Medium, PingFang SC;
-			font-weight: 500;
-			color: #000000;
-			line-height: 33px;
-			padding: 24px 32px;
-		}
-	}
+  min-height: 100%;
+  &__top {
+    height: 604px;
+    background: linear-gradient(180deg, #bfb5ff 0%, rgba(217, 217, 217, 0) 100%);
+  }
+  &__body {
+    margin-top: -32px;
+    min-height: 100%;
+    background: #f7f8fa;
+    border-radius: 32px 32px 0 0;
+    padding: 32px;
+  }
+  &__knowledge {
+    --u-card-bg-color: #ffffff;
+    --u-card-body-padding: 0;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    &-cover {
+      border-radius: 16px 16px 0px 0px;
+      image {
+        border-radius: 16px 16px 0px 0px;
+      }
+    }
+    &-title {
+      font-size: 28px;
+      font-family: PingFang SC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #000000;
+      line-height: 33px;
+      padding: 24px 32px;
+    }
+  }
+  &__location {
+    margin-left: 16px;
+    min-width: 122px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee;
+    font-size: 28px;
+    font-family: PingFang SC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #999999;
+  }
+  &__tabs {
+    position: sticky;
+    top: 160px;
+    background: #f7f8fa;
+    padding-bottom: 20px;
+    z-index: 1;
+  }
 }

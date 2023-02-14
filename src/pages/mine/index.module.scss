@@ -1,169 +1,163 @@
 page {
-	padding-bottom: calc(100 + constant(safe-area-inset-bottom));
-	padding-bottom: calc(100px + env(safe-area-inset-bottom));
-	background: #f7f8fa url(https://s1.ax1x.com/2023/02/14/pST9cKH.png) 0 0/100%
-		400px no-repeat;
-	--u-card-header-padding: 32px 24px;
-	--u-card-body-padding: 0 32px 28px;
+  padding-bottom: calc(100 + constant(safe-area-inset-bottom));
+  padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  background: #f7f8fa url(https://s1.ax1x.com/2023/02/14/pST9cKH.png) 0 0/100% 400px no-repeat;
+  --u-card-header-padding: 32px 24px;
+  --u-card-body-padding: 0 32px 28px;
   --u-card-bg-color: #ffffff;
 }
 
 .mine-page {
-	min-height: 100%;
-	margin-bottom: 32px;
-	&__user {
-		padding: 60px 24px 40px 56px;
-		display: flex;
-		align-items: center;
-		overflow: hidden;
-		&-info {
-			flex: 1;
-			padding-left: 24px;
-			padding-right: 12px;
-			&-signature {
-				font-size: 24px;
-				font-family: PingFang SC-Regular, PingFang SC;
-				font-weight: 400;
-				color: #999999;
-				line-height: 28px;
-				padding-top: 10px;
-			}
-		}
-		&-edit {
-			width: 140px;
-			height: 68px;
-			background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%) #ffffff;
-			border-radius: 200px 200px 200px 200px;
-			border: 2px solid #e1e1e1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 24px;
-			font-family: PingFang SC-Regular, PingFang SC;
-			font-weight: 400;
-			color: #333333;
-			line-height: 28px;
-			&-icon {
-				margin-right: 12px;
-			}
-		}
-	}
-	&__body {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
-	&__community {
-		background: #ffffff url(https://s1.ax1x.com/2023/02/14/pSoHE1x.png)
-			no-repeat;
-		background-size: 100% 100%;
-		margin-bottom: 36px;
-		border-radius: 24px;
-		&-extra {
-			display: flex;
-			align-items: center;
-			font-size: 24px;
-			font-family: PingFang SC-Regular, PingFang SC;
-			font-weight: 400;
-			color: #333333;
-			line-height: 28px;
-		}
-		&-body {
-			display: flex;
-			align-items: center;
-			padding-bottom: 32px;
-		}
-		&-name {
-			font-size: 28px;
-			font-family: PingFang SC-Regular, PingFang SC;
-			font-weight: 400;
-			color: #333333;
-			line-height: 33px;
-			padding-left: 24px;
-		}
-		&-activity {
-			padding: 20px 24px;
-			background: linear-gradient(
-				85deg,
-				#fff0f2 0%,
-				rgba(255, 240, 242, 0) 100%
-			);
-			border-radius: 8px;
-			display: flex;
-			align-items: center;
-			font-size: 28px;
-			font-family: PingFang SC-Regular, PingFang SC;
-			font-weight: 400;
-			color: #333333;
-		}
-	}
-	&__join-community {
-		margin-bottom: 36px;
-		border-radius: 24px;
-		&-scroll {
-			display: flex;
-			height: 180px;
-		}
-		&-grid {
-			display: flex;
-			align-items: center;
-			&-item {
-				flex: auto;
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				align-items: center;
-				overflow: hidden;
-				margin-right: 42px;
-				&:last-child {
-					margin-right: 0;
-				}
-				&-title {
-					font-size: 24px;
-					font-family: PingFang SC-Regular, PingFang SC;
-					font-weight: 400;
-					color: #333333;
-					line-height: 28px;
-					padding-top: 20px;
-				}
-			}
-		}
-	}
-	&__activity {
-		margin-bottom: 36px;
-		border-radius: 24px;
-		--u-card-body-padding: 38px 24px;
-		&-body {
-			display: flex;
-			align-items: center;
-		}
-		&-grid {
-			flex: 1;
-			display: flex;
-			align-items: center;
-			position: relative;
-			&:first-child::after {
-				content: '';
-				position: absolute;
-				right: 0;
-				width: 2px;
-				height: 44px;
-				background: #eaeaea;
-			}
-			&:last-child {
-				padding-left: 32px;
-			}
-			&-title {
-				font-size: 28px;
-				font-family: PingFang SC-Regular, PingFang SC;
-				font-weight: 400;
-				color: #333333;
-				line-height: 33px;
-				padding-left: 12px;
-			}
-		}
-	}
-	&__settings {
-		border-radius: 24px;
-		--u-card-body-padding: 0 32px 0;
-	}
+  min-height: 100%;
+  margin-bottom: 32px;
+  &__user {
+    padding: 60px 24px 40px 56px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    &-info {
+      flex: 1;
+      padding-left: 24px;
+      padding-right: 12px;
+      &-signature {
+        font-size: 24px;
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 28px;
+        padding-top: 10px;
+      }
+    }
+    &-edit {
+      width: 140px;
+      height: 68px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%) #ffffff;
+      border-radius: 200px 200px 200px 200px;
+      border: 2px solid #e1e1e1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-family: PingFang SC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #333333;
+      line-height: 28px;
+      &-icon {
+        margin-right: 12px;
+      }
+    }
+  }
+  &__body {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  &__community {
+    background: #ffffff url(https://s1.ax1x.com/2023/02/14/pSoHE1x.png) no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 36px;
+    border-radius: 16px;
+    &-extra {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-family: PingFang SC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #333333;
+      line-height: 28px;
+    }
+    &-body {
+      display: flex;
+      align-items: center;
+      padding-bottom: 32px;
+    }
+    &-name {
+      font-size: 28px;
+      font-family: PingFang SC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #333333;
+      line-height: 33px;
+      padding-left: 24px;
+    }
+    &-activity {
+      padding: 20px 24px;
+      background: linear-gradient(85deg, #fff0f2 0%, rgba(255, 240, 242, 0) 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      font-size: 28px;
+      font-family: PingFang SC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #333333;
+    }
+  }
+  &__join-community {
+    margin-bottom: 36px;
+    border-radius: 16px;
+    &-scroll {
+      display: flex;
+      height: 180px;
+    }
+    &-grid {
+      display: flex;
+      align-items: center;
+      &-item {
+        flex: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        margin-right: 42px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &-title {
+          font-size: 24px;
+          font-family: PingFang SC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #333333;
+          line-height: 28px;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+  &__activity {
+    margin-bottom: 36px;
+    border-radius: 16px;
+    --u-card-body-padding: 38px 24px;
+    &-body {
+      display: flex;
+      align-items: center;
+    }
+    &-grid {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &:first-child::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 44px;
+        background: #eaeaea;
+      }
+      &:last-child {
+        padding-left: 32px;
+      }
+      &-title {
+        font-size: 28px;
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #333333;
+        line-height: 33px;
+        padding-left: 12px;
+      }
+    }
+  }
+  &__settings {
+    border-radius: 16px;
+    --u-card-body-padding: 0 32px 0;
+  }
 }

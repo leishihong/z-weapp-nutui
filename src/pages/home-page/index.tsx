@@ -36,6 +36,7 @@ const HomePage = () => {
               src='https://img.mtaste.cn/test/img/system/knowledge/e0bd4436fa464088979194ef848ac4ff.jpg'
               size={[686, 400]}
               shape='rounded'
+              rootCls={cx[b('knowledge-cover')]}
             />
             <View className={cls(cx[b('knowledge-title')], 'ellipsis')}>【ozzon上新】花鸟龙月生成色怎么搭配</View>
           </UCard>
@@ -66,24 +67,27 @@ const HomePage = () => {
             ]}
             showMoreIcon
           >
-            <UTabs
-              dataSource={[
-                { id: '', title: '全部' },
-                { id: '1', title: '漫展' },
-                { id: '2', title: '国风' },
-                { id: '3', title: '新1鲜' },
-                { id: '11', title: '漫2展' },
-                { id: '22', title: '国3风' },
-                { id: '33', title: '新412212鲜' },
-                { id: '131', title: '漫1sdsdsd2展' },
-                { id: '242', title: 'sdsd' },
-                { id: '353', title: '新sdsd4鲜' }
-              ]}
-              value={tabActive}
-              valueKey='id'
-              valueLabel='title'
-              onClick={handleTabClick}
-            />
+            <View className={cx[b('tabs')]}>
+              <UTabs
+                dataSource={[
+                  { id: '', title: '全部' },
+                  { id: '1', title: '漫展' },
+                  { id: '2', title: '国风' },
+                  { id: '3', title: '新1鲜' },
+                  { id: '11', title: '漫2展' },
+                  { id: '22', title: '国3风' },
+                  { id: '33', title: '新412212鲜' },
+                  { id: '131', title: '漫1sdsdsd2展' },
+                  { id: '242', title: 'sdsd' },
+                  { id: '353', title: '新sdsd4鲜' }
+                ]}
+                value={tabActive}
+                valueKey='id'
+                valueLabel='title'
+                onClick={handleTabClick}
+                tabExtra={<View className={cx[b('location')]}>全国</View>}
+              />
+            </View>
           </ActivityCard>
         </View>
       </View>
