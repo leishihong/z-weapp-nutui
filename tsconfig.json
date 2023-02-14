@@ -15,12 +15,10 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    // "jsx": "react-jsx",
+    "jsx": "preserve",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "paths": {
       "src/*": ["./src/*"],
       "api/*": ["./src/api/*"],
@@ -33,7 +31,7 @@
       "pages/*": ["./src/pages/*"],
       "styles/*": ["./src/styles/*"],
       "constants/*": ["./src/constants/*"],
-      "taste-ui/*": ["./src/taste-ui/*"],
+      "taste-ui/*": ["./src/taste-ui/*"]
     }
   },
   "include": ["./src", "./types"],
