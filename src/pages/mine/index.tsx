@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Taro from '@tarojs/taro';
 import { ScrollView, View, Block } from '@tarojs/components';
 import cls from 'classnames';
@@ -14,7 +14,7 @@ import cx from './index.module.scss';
 const bem = UWithNaming({ n: 'mine-' });
 const b = bem('page');
 
-const MinePage = () => {
+const MinePage: FC = () => {
   return (
     <PageContainer selectedIndex={4}>
       <TaroNavigationBar background='transparent' renderLeft={<Block />} />
